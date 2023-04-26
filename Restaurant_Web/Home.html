@@ -1,56 +1,40 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <link rel="icon" href="assets/img/utensils-solid.svg" type="image/x-icon">
-
-    <title>RESTAURANT_WEB</title>
+    <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
 </head>
 
 <body>
-    <header class="d-none d-md-block container-fluid bg-dark text-white text-center py-3">
-        <h1>RESTAURANT_WEB</h1>
+    
+    <header class="row bg-light-subtle"><!--d-none d-md-block container-fluid text-center -->
+        <img class="col-1 nav-img align-self-center" src="assets/img/Logo-final.png" alt="RESTAURANT">
+        <h1 class="col-2 align-self-center nombre">Los<br>Piñuflas</h1>
+        <nav class="col align-self-center d-flex justify-content-evenly">
+            
+            <a class="nav-link active" aria-cirrent="page" href="Home.html" rel="noopener noreferrer">Home</a>
+            <i class="fa-solid fa-diamond icon-diamond"></i>
+            <a class="nav-link active" href="contacto.html">Contacto</a>
+            <i class="fa-solid fa-diamond icon-diamond"></i>
+            <a class="nav-link active" href="nosotros.html">Nosotros</a>
+            <i class="fa-solid fa-diamond icon-diamond"></i>
+            <a class="nav-link active" href="historia.html">Historia</a>
+            <i class="fa-solid fa-diamond icon-diamond"></i>
+            <a class="nav-link active" href="ubicacion.html">Ubicación</a>
+        </nav>
     </header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#home.html">
-                <img class="nav-img" src="assets/img/utensils-solid.svg" alt="RESTAURANT">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home.html">HOME</a>
-                    </li>
-                    
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            ENLACES EXTERNOS
-                        </a>                        
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="BUSCAR" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">OK</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
     <main>
 
         <div class="container mt-2">
@@ -124,7 +108,7 @@
 
     </main>
 
-    <footer class="container-fluid p-5 mt-2 bg-dark">
+    <footer class="container-fluid p-5 mt-2 bg-light-subtle">
         <div class="row text-warning">
             <div class="col-md-4 text-center mb-3">
                 <img class="footer-img" src="assets/img/utensils-solid.svg" alt="RESTAURANT_WEB">
@@ -202,6 +186,5 @@
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-    
 </body>
 </html>

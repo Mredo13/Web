@@ -1,0 +1,61 @@
+:root,[new-data-bs-theme="light"]{
+    
+    --clr-light:#fdffc4;
+    --crl-dark:#00332a;
+    --clr-primary:#dbffa2;
+    --clr-secondary:#c3fcf2;
+    --clr-accent:#ff7750;
+
+    --fg: var(--crl-dark);/*foreground = primer plano*/
+    --bg: var(--clr-light);/*background = */
+    --content-bg: var(--clr-primary);
+
+    
+}
+[new-data-bs-theme="dark"]{
+    --clr-light:#fdffc4;
+    --crl-dark:#00332a;
+    --clr-primary:#202302;
+    --clr-secondary:#00100d;
+    --clr-accent:#ff7750;
+
+    --fg: var(--clr-light);/*foreground = primer plano*/
+    --bg: var(--crl-dark);
+    --content-bg: var(--clr-primary);
+}
+.header1{
+    background-color: var(--bg);
+}
+
+
+.div-buttons{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.btn{
+    padding: 1em 2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    position: relative;
+    border: none;
+    line-height: 1;
+    flex-direction: row;
+    margin-inline: 1em;
+    
+}
+
+.button-1{
+    background-color: var(--clr-accent);
+    color: var(--fg);
+}
+.button-2{
+    background-color: var(--fg);
+    color: var(--bg);
+}
+.imagen{
+    height: 91vh;
+    width: 45vw;
+    margin-block: 4vh;
+}
