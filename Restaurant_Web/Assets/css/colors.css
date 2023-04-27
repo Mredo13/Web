@@ -5,11 +5,15 @@
     --clr-primary:#dbffa2;
     --clr-secondary:#c3fcf2;
     --clr-accent:#ff7750;
+    --clr-accent2: #17139d;
 
     --fg: var(--crl-dark);/*foreground = primer plano*/
     --bg: var(--clr-light);/*background = */
     --content-bg: var(--clr-primary);
-
+    --bs-link-color: var(--clr-accent);
+    --bs-link-hover-color: var(--clr-accent);
+    --bs-link-hover-color: var(--clr-accent);
+    --bs-secondary-color: var(--clr-accent);
     
 }
 [new-data-bs-theme="dark"]{
@@ -18,6 +22,7 @@
     --clr-primary:#202302;
     --clr-secondary:#00100d;
     --clr-accent:#ff7750;
+    --clr-accent2:pink;
 
     --fg: var(--clr-light);/*foreground = primer plano*/
     --bg: var(--crl-dark);
@@ -27,6 +32,73 @@
     background-color: var(--bg);
 }
 
+.colors-top-bottom{
+    color: var(--fg);
+    background: linear-gradient(125deg, var(--clr-primary) 0%, var(--clr-secondary) 100%);
+}
+.new-nav-link{
+    font-size: 1.1rem;
+    font-family: "bebas neue";
+    padding: 0.5rem 1em;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: block;
+    color: var(--fg);
+    text-decoration: none;
+    background: none;
+    border: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    /*ver como funcionan las tanciciones*/
+}
+.new-nav-link:hover{
+    color:var(--clr-accent2);
+    text-decoration: none; 
+}
+
+.ye{
+    font-size: 1.1rem;
+    font-family: "bebas neue";
+    color: var(--fg);
+    padding: 0.5rem 1em;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: block;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    /*la trancicion hace la magia*/
+}
+.ye:hover{
+    color:var(--clr-accent2);
+    text-decoration: none; 
+}
+.pr{
+    font-size: 1.1rem;
+    font-family: "bebas neue";
+    padding: 0.5rem 1em;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: block;
+    color:var(--fg);
+    text-decoration: none;
+    background: none;
+    border: 0;
+    
+}
+.pr:hover{
+    color:var(--clr-accent2);
+    text-decoration: none;
+}
 
 .div-buttons{
     display: flex;
