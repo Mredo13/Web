@@ -28,8 +28,16 @@
     --bg: var(--crl-dark);
     --content-bg: var(--clr-primary);
 }
-.header1{
-    background-color: var(--bg);
+.nombre{
+    font-family: "cabin sketch";
+    margin-top: 10px;
+}
+.logo{
+    display: flex;
+    color: var(--fg);
+}
+.logo img{
+    height: 130px;
 }
 
 .colors-top-bottom{
