@@ -136,3 +136,10 @@
     width: 45vw;
     margin-block: 4vh;
 }
+
+
+#modoOscuro{
+    font-size: 1000%;
+    cursor: pointer;
+    color:yellow;
+}
