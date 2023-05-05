@@ -1,15 +1,12 @@
 .contenido{
     display: flex;
     margin: 0px;
-    
-    background-color: var(--bg);
     color: var(--fg);
     font-family: "Assistant", sans-serif;
     font-size: 18px;
     line-height: 1.6;
     flex-direction: row;
-    background: linear-gradient(125deg, var(--clr-secondary) 0%, var(--clr-primary) 100%);
-}
+    }
 .texto{
     display: flex;
     flex-direction: column;
@@ -19,7 +16,6 @@ h1{
     font-size: 5rem;
     font-family: "Playfai Display", serif;
     margin-left: 10px;
-    
     margin: 0 0 0.25rem;
 }
 p{

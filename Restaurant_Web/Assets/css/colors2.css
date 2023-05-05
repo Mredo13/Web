@@ -1,0 +1,148 @@
+:root,[new-data-bs-theme="light"]{
+    --clr-light:#FFF9DE;
+    --crl-dark:#A6D0DD;
+    --clr-primary:#FF6969;
+    --clr-secondary:#FFD3B0;
+    --clr-accent:#ff7750;
+    --clr-accent2:pink;
+    --noice: rgba(255, 193, 7, 1);
+
+    --fg: var(--clr-light);/*foreground = primer plano*/
+    --bg: var(--crl-dark);
+}
+
+[new-data-bs-theme="dark"]{
+    --clr-light:#CBE4DE;
+    --crl-dark:#2C3333;
+    --clr-primary:#2E4F4F;
+    --clr-secondary:#0E8388;
+    --clr-accent:#ff7750;
+    --clr-accent2:pink;
+    --noice: rgba(255, 193, 7, 1);
+
+    --fg: var(--clr-light);/*foreground = primer plano*/
+    --bg: var(--crl-dark);
+}
+.colors-top-bottom{
+    background-color: var(--bg);
+    color: var(--noice);/*no afecta en nada*/
+}
+.colors-middle{
+    background: linear-gradient(125deg, var(--clr-primary) 25%, var(--clr-accent) 100%);
+}
+.logo{
+    display: flex;
+    
+}
+.logo h1{
+    font-family: "cabin sketch";
+    color: var(--fg);
+    margin-top: 10px;
+}
+.logo img, .footer-img{
+    height: 130px;
+}
+
+
+.new-nav-link{
+    font-size: 1.1rem;
+    font-family: "bebas neue";
+    padding: 0.5rem 1em;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: block;
+    color: var(--fg);
+    text-decoration: none;
+    background: none;
+    border: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    /*ver como funcionan las tanciciones*/
+}
+.new-nav-link:hover{
+    color:var(--clr-accent2);
+    text-decoration: none; 
+}
+
+.ye{
+    font-size: 1.1rem;
+    font-family: "bebas neue";
+    color: var(--fg);
+    padding: 0.5rem 1em;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: block;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    /*la trancicion hace la magia*/
+}
+.ye:hover{
+    color:var(--clr-accent2);
+    text-decoration: none; 
+}
+.pr{
+    font-size: 1.1rem;
+    font-family: "bebas neue";
+    padding: 0.5rem 1em;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: block;
+    color:var(--fg);
+    text-decoration: none;
+    background: none;
+    border: 0;
+    
+}
+.pr:hover{
+    color:var(--clr-accent2);
+    text-decoration: none;
+}
+
+.div-buttons{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.btn{
+    padding: 1em 2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    position: relative;
+    border: none;
+    line-height: 1;
+    flex-direction: row;
+    margin-inline: 1em;
+    
+}
+
+.button-1{
+    background-color: var(--clr-accent);
+    color: var(--fg);
+}
+.button-2{
+    background-color: var(--fg);
+    color: var(--bg);
+}
+.imagen{
+    height: 91vh;
+    width: 45vw;
+    margin-block: 4vh;
+}
+
+
+#modoOscuro{
+    font-size: 200%;
+    cursor: pointer;
+    color:yellow;
+}
