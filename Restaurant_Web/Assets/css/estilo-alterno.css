@@ -1,7 +1,6 @@
 .contenido{
     display: flex;
     margin: 0px;
-    color: var(--fg);
     font-family: "Assistant", sans-serif;
     font-size: 18px;
     line-height: 1.6;
@@ -12,13 +11,13 @@
     flex-direction: column;
     justify-content: center;
 }
-h1{
-    font-size: 5rem;
+.texto h1{
+    font-size: 3rem;
     font-family: "Playfai Display", serif;
     margin-left: 10px;
     margin: 0 0 0.25rem;
 }
-p{
+.texto p{
     margin-left: 20px;
     font-family: "Assistant", sans-serif;
 }
