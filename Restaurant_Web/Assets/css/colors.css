@@ -1,46 +1,58 @@
 :root,[new-data-bs-theme="light"]{
-    
-    --clr-light:#fdffc4;
-    --crl-dark:#00332a;
-    --clr-primary:#dbffa2;
-    --clr-secondary:#c3fcf2;
-    --clr-accent:#ff7750;
-    --clr-accent2: #17139d;
+    --clr-light:#FFF9DE;
+    --crl-dark:#67d4f5;
+    --clr-primary:#5350ff;
+    --clr-secondary:#FFD3B0;
+    --clr-accent:#FF6969;
+    --clr-accent2:yellow;
     --noice: rgba(255, 193, 7, 1);
 
-    --fg: var(--crl-dark);/*foreground = primer plano*/
-    --bg: var(--clr-light);/*background = */
-}
-[new-data-bs-theme="dark"]{
-    --clr-light:#fdffc4;
-    --crl-dark:#00332a;
-    --clr-primary:#202302;
-    --clr-secondary:#00100d;
-    --clr-accent:#ff7750;
-    --clr-accent2:pink;
-    --noice: rgba(255, 193, 7, 1);
-
+    --text-top: black;
+    --text-middle: white;
+    --text-bottom:black;
     --fg: var(--clr-light);/*foreground = primer plano*/
     --bg: var(--crl-dark);
 }
 
+[new-data-bs-theme="dark"]{
+    --clr-light:#CBE4DE;
+    --crl-dark:#2C3333;
+    --clr-primary:#2E4F4F;
+    --clr-secondary:#0E8388;
+    --clr-accent:#ff7750;
+    --clr-accent2:pink;
+    --noice: rgba(255, 193, 7, 1);
+
+    --text-top: white;
+    --text-middle: white;
+    --text-bottom:rgba(255, 193, 7, 1);
+    --fg: var(--clr-light);/*foreground = primer plano*/
+    --bg: var(--crl-dark);
+}
+.colors-top-bottom{
+    background-color: var(--bg);
+    transition: color 0.7s ease-in-out, background-color 0.2s ease-in-out;
+}
+.colors-middle{
+    background: linear-gradient(125deg, var(--clr-primary) 25%, var(--clr-accent) 100%);
+    color: var(--text-middle);
+    transition: color 1s ease-in-out;
+}
+.color-text-bottom{
+    color: var(--text-bottom);
+    transition: color 0.7s ease-in-out, background-color 0.2s ease-in-out;
+}
 .logo{
     display: flex;
-    
 }
 .logo h1{
     font-family: "cabin sketch";
-    color: var(--fg);
+    color: var(--text-top);
     margin-top: 10px;
+    transition: color 1s ease-in-out;
 }
 .logo img, .footer-img{
     height: 130px;
-}
-
-.colors-top-bottom{
-    color: var(--fg);
-    background: linear-gradient(125deg, var(--clr-primary) 0%, var(--clr-secondary) 100%);
-    background: linear-gradient(125deg, var(--clr-secondary) 0%, var(--clr-primary) 100%);
 }
 .new-nav-link{
     font-size: 1.1rem;
@@ -52,58 +64,15 @@
     margin-bottom: 0;
     list-style: none;
     display: block;
-    color: var(--fg);
+    color: var(--text-top);
     text-decoration: none;
     background: none;
     border: 0;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-    /*ver como funcionan las tanciciones*/
+    transition: color 1s ease-in-out, background-color 0.15s ease-in-out;
 }
 .new-nav-link:hover{
     color:var(--clr-accent2);
     text-decoration: none; 
-}
-
-.ye{
-    font-size: 1.1rem;
-    font-family: "bebas neue";
-    color: var(--fg);
-    padding: 0.5rem 1em;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    display: block;
-    text-decoration: none;
-    background: none;
-    border: 0;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-    /*la trancicion hace la magia*/
-}
-.ye:hover{
-    color:var(--clr-accent2);
-    text-decoration: none; 
-}
-.pr{
-    font-size: 1.1rem;
-    font-family: "bebas neue";
-    padding: 0.5rem 1em;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    display: block;
-    color:var(--fg);
-    text-decoration: none;
-    background: none;
-    border: 0;
-    
-}
-.pr:hover{
-    color:var(--clr-accent2);
-    text-decoration: none;
 }
 
 .div-buttons{
@@ -111,6 +80,7 @@
     justify-content: center;
     align-content: center;
 }
+/*utilizar para editar el boton del footer
 .btn{
     padding: 1em 2em;
     text-decoration: none;
@@ -121,23 +91,21 @@
     line-height: 1;
     flex-direction: row;
     margin-inline: 1em;
-    
-}
-
-.button-1{
     background-color: var(--clr-accent);
     color: var(--fg);
+    
 }
-.button-2{
-    background-color: var(--fg);
-    color: var(--bg);
-}
+.btn:hover{
+    color: red;
+    background-color: green;
+}*/
+
+
 .imagen{
     height: 91vh;
     width: 45vw;
     margin-block: 4vh;
 }
-
 
 #modoOscuro{
     font-size: 200%;
