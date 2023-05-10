@@ -31,3 +31,19 @@
     width: 45vw;
     margin-block: 4vh;
 }
+
+.container-clock {
+    text-align: center;
+    ;
+}
+
+.container-clock h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: "cabin sketch";
+}
+
+.container-clock p {
+    font-size: 1rem;
+    font-family: "cabin sketch";
+}
