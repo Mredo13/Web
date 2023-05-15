@@ -7,6 +7,7 @@ const titulo = document.getElementById('titulo');
 
 
 toggle.addEventListener('click',function(){
+    
     this.classList.toggle('bi-moon');
     this.classList.toggle('bi-brightness-high-fill');
     if(html.getAttribute("new-data-bs-theme")=="dark"){
