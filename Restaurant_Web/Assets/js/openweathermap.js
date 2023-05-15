@@ -1,3 +1,25 @@
+function obtenerNombreRegion(latitud, longitud) {
+    const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitud}&lon=${longitud}&format=jsonv2`;
+  
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        if (data && data.address) {
+          const region = data.address.state || data.address.province || data.address.region;
+          console.log(`La región correspondiente a las coordenadas (${latitud}, ${longitud}) es: ${region}`);
+          return region;
+        } else {
+          console.log('No se encontró una región para las coordenadas dadas.');
+        }
+      })
+      .catch(error => {
+        console.log('Error:', error);
+      });
+      return null;
+}
+
+
+
 $('#buscar_clima').on('click', function () {
     let ciudad_buscada = $('#ciudad_buscada').val();
 
@@ -6,7 +28,6 @@ $('#buscar_clima').on('click', function () {
         let lang = 'es';
         let apiid = 'c6a7fe5bc4025f2fdfd88dfa3756ce76';
         let urlClima = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad_buscada}&lang=${lang}&units=${units}&appid=${apiid}`;
-
         $.getJSON(urlClima, function (dataClima) {
             let urlPais = `https://restcountries.com/v3.1/alpha/${dataClima.sys.country}`;
             $.getJSON(urlPais, function (dataPais) {
