@@ -45,7 +45,7 @@ function validarFormulario() {
         document.getElementById("error_nombre_max").style.display = "none";
         document.getElementById("nombre").classList.add("is-invalid");
     }
-    else if(nombre.trim().length > 30){
+    else if(nombre.trim().length > 15){
         document.getElementById("error_nombre_max").style.display = "inline";
         document.getElementById("error_nombre_min").style.display = "none";
         document.getElementById("nombre").classList.add("is-invalid");
@@ -63,7 +63,7 @@ function validarFormulario() {
         document.getElementById("error_apellido_max").style.display = "none";
         document.getElementById("paterno").classList.add("is-invalid");
     }
-    else if(paterno.trim().length > 30){
+    else if(paterno.trim().length > 15){
         document.getElementById("error_paterno_max").style.display = "inline";
         document.getElementById("error_paterno_min").style.display = "none";
         document.getElementById("paterno").classList.add("is-invalid");
@@ -81,7 +81,7 @@ function validarFormulario() {
         document.getElementById("error_materno_max").style.display = "none";
         document.getElementById("materno").classList.add("is-invalid");
     }
-    else if(materno.trim().length > 30){
+    else if(materno.trim().length > 15){
         document.getElementById("error_materno_max").style.display = "inline";
         document.getElementById("error_materno_min").style.display = "none";
         document.getElementById("materno").classList.add("is-invalid");
@@ -123,7 +123,7 @@ function validarFormulario() {
         document.getElementById("error_direccion_max").style.display = "none";
         document.getElementById("direccion").classList.add("is-invalid");
     }
-    else if(nombre.trim().length > 30){
+    else if(nombre.trim().length > 20){
         document.getElementById("error_direccion_max").style.display = "inline";
         document.getElementById("error_direccion_min").style.display = "none";
         document.getElementById("direccion").classList.add("is-invalid");
@@ -175,3 +175,31 @@ function password(){
 
 }
 
+document.getElementById("miFormulario").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita que se envíe el formulario automáticamente
+  
+    // Obtener los valores de los campos del formulario
+    var nombre = document.getElementById("nombre").value;
+    var apellidoPaterno = document.getElementById("paterno").value;
+    var apellidoMaterno = document.getElementById("materno").value;
+    var rut = document.getElementById("rut").value;
+    var email = document.getElementById("email").value;
+    var direccion = document.getElementById("direccion").value;
+    var telefono = document.getElementById("telefono").value;
+    var comentarios = document.getElementById("Comentarios").value;
+    var fechaNacimiento = document.getElementById("fecha_nac").value;
+    var password = document.getElementById("password").value;
+  
+    // Mostrar la información en el elemento con el id "respuesta"
+    var respuestaElemento = document.getElementById("respuesta");
+    respuestaElemento.innerHTML = "Nombre: " + nombre + "<br>"
+      + "Apellido Paterno: " + apellidoPaterno + "<br>"
+      + "Apellido Materno: " + apellidoMaterno + "<br>"
+      + "RUT: " + rut + "<br>"
+      + "Email: " + email + "<br>"
+      + "Dirección: " + direccion + "<br>"
+      + "Teléfono: " + telefono + "<br>"
+      + "Comentarios: " + comentarios + "<br>"
+      + "Fecha de Nacimiento: " + fechaNacimiento + "<br>"
+      + "Contraseña: " + password;
+});
