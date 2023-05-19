@@ -1,35 +1,25 @@
+// No es mejor crear un css?
 document.getElementById("error_nombre_min").style.display="none";
 document.getElementById("error_nombre_max").style.display="none";
-
 document.getElementById("error_paterno_min").style.display="none";
 document.getElementById("error_paterno_max").style.display="none";
-
 document.getElementById("error_materno_min").style.display="none";
 document.getElementById("error_materno_max").style.display="none";
-
 document.getElementById("error_rut").style.display="none";
-
 document.getElementById("error_email").style.display="none";
-
 document.getElementById("error_direccion_min").style.display="none";
 document.getElementById("error_direccion_max").style.display="none";
-
 document.getElementById("error_telefono").style.display="none";
-
 document.getElementById("ocultar_pass").style.display="none";
 document.getElementById("error_password").style.display="none";
-
+document.getElementById("error_nacimiento").style.display="none";
 document.getElementById("error_nacimiento").style.display="none";
 
-document.getElementById("error_nacimiento").style.display="none";
-
-
-
-
-
+// Toma los elementos del formulario por orden, solo muestra el primero que tiene error
 function validarFormulario() {
     
     let nombre = document.getElementById("nombre").value;
+    // validarNombres(document.getElementById("nombre").value,"nombre");
     let paterno = document.getElementById("paterno").value;
     let materno = document.getElementById("materno").value;
     let rut = document.getElementById("rut").value;
@@ -40,6 +30,8 @@ function validarFormulario() {
     let fecha_nac = document.getElementById("fecha_nac").value;      
 
     //Validación Nombre
+    // validarNombres(nombre,"nombre");
+
     if (nombre.trim().length == 0){
         document.getElementById("error_nombre_min").style.display = "inline";
         document.getElementById("error_nombre_max").style.display = "none";
@@ -58,6 +50,7 @@ function validarFormulario() {
     }
 
     //Validación Apellido Paterno
+    // validarNombres(paterno,"paterno");
     if (paterno.trim().length == 0){
         document.getElementById("error_apellido_min").style.display = "inline";
         document.getElementById("error_apellido_max").style.display = "none";
@@ -76,6 +69,7 @@ function validarFormulario() {
     }
        
     //Validación Apellido Materno
+    // validarNombres(materno,"materno");
        if (materno.trim().length == 0){
         document.getElementById("error_materno_min").style.display = "inline";
         document.getElementById("error_materno_max").style.display = "none";
@@ -173,5 +167,24 @@ function password(){
         document.getElementById("ocultar_pass").style.display = "none";
     }   
 
+}
+//Probar, puede que funcone para todos los que se validen como strings que no deben ser vacios
+function validarNombres(elemento, tipo){
+    if (elemento.trim().length == 0){
+        document.getElementById(`error_${tipo}_min`).style.display = "inline";
+        document.getElementById(`error_${tipo}max`).style.display = "none";
+        document.getElementById(tipo).classList.add("is-invalid");
+    }
+    else if(elemento.trim().length > 30){
+        document.getElementById(`error_${tipo}_max`).style.display = "inline";
+        document.getElementById(`error_${tipo}_min`).style.display = "none";
+        document.getElementById(tipo).classList.add("is-invalid");
+    }
+    else{
+        document.getElementById(`error_${tipo}_min`).style.display = "none";
+        document.getElementById(`error_${tipo}_max`).style.display = "none";
+        document.getElementById(tipo).classList.remove("is-invalid");
+        document.getElementById(tipo).classList.add("is-valid");
+    }
 }
 
