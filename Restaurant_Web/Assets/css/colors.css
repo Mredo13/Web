@@ -29,19 +29,19 @@
     --fg: var(--clr-light);/*foreground = primer plano*/
     --bg: var(--crl-dark);
 }
-.colors-top-bottom{
-    background-color: #c6cddc;
-    transition: color 0.7s ease-in-out, background-color 0.2s ease-in-out;
+
+.diseño-header{
+    padding: 0rem 1rem;
+    border-radius: 0 0 10px 10px;
+    margin: 0rem 2rem;
 }
-.colors-middle{
-    background: #fefefe;
-    color: var(--text-middle);
-    transition: color 1s ease-in-out;
+
+.ab{
+    padding-right: 0px;
+    border: solid 1px red;
 }
-.color-text-bottom{
-    color: #c6cddc;
-    transition: color 0.7s ease-in-out, background-color 0.2s ease-in-out;
-}
+
+
 
 .logo{
     display: flex;
@@ -95,12 +95,18 @@
     cursor: pointer;
     color:yellow;
 }
-.diseño-header{
-    padding: 0rem 40px;
-    border-radius: 0 0 10px 10px;
-    margin: 0 2rem;
-}
 
-.navbar{
-    padding: 0rem 0rem;
+
+.colors-top-bottom{
+    background-color: #c6cddc;
+    transition: color 0.7s ease-in-out, background-color 0.2s ease-in-out;
+}
+.colors-middle{
+    background: #fefefe;
+    color: var(--text-middle);
+    transition: color 1s ease-in-out;
+}
+.color-text-bottom{
+    color: #c6cddc;
+    transition: color 0.7s ease-in-out, background-color 0.2s ease-in-out;
 }

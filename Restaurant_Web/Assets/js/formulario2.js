@@ -29,20 +29,8 @@ function validarRut(){
         rut.classList.add("is-valid");
     }
 }
-
-function validarFormulario() {
-    
-
+function validarEmail(){
     let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-    let direccion = document.getElementById("direccion").value;
-    let telefono = document.getElementById("telefono").value;   
-    let fecha_nac = document.getElementById("fecha_nac").value;      
-
- 
-
-
-    //Validacion EMAIL
     let rgEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
     if (rgEmail.test(email) == false){  
         document.getElementById("error_email").style.display = "inline";
@@ -53,15 +41,17 @@ function validarFormulario() {
         document.getElementById("email").classList.remove("is-invalid");
         document.getElementById("email").classList.add("is-valid");
 
-    }
-
-    //Validación direccion
-    if (direccion.trim().length == 0){
+    }
+}
+function validarDireccion(){
+    let direccion = document.getElementById("direccion");
+    
+    if (direccion.value.trim().length == 0){
         document.getElementById("error_direccion_min").style.display = "inline";
         document.getElementById("error_direccion_max").style.display = "none";
         document.getElementById("direccion").classList.add("is-invalid");
     }
-    else if(nombre.trim().length > 20){
+    else if(direccion.value.trim().length > 20){
         document.getElementById("error_direccion_max").style.display = "inline";
         document.getElementById("error_direccion_min").style.display = "none";
         document.getElementById("direccion").classList.add("is-invalid");
@@ -72,9 +62,10 @@ function validarFormulario() {
         document.getElementById("direccion").classList.remove("is-invalid");
         document.getElementById("direccion").classList.add("is-valid");
     }
-
-    //Validación telefono
-    if (telefono.trim().length == 0){
+}
+function validarTelefono(){
+    let telefono = document.getElementById("telefono");
+    if (telefono.value.trim().length == 0){
         document.getElementById("error_telefono").style.display = "inline";
         document.getElementById("telefono").classList.add("is-invalid");
     }
@@ -83,8 +74,9 @@ function validarFormulario() {
         document.getElementById("telefono").classList.remove("is-invalid");
         document.getElementById("telefono").classList.add("is-valid");
     }
-
-    //Validacion PASSWORD
+}
+function validarContraseña(){ 
+    let password = document.getElementById("password").value;
     let rgPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{6,10}$/;
     if(rgPass.test(password) == false){
         document.getElementById("error_password").style.display = "inline";
@@ -97,26 +89,10 @@ function validarFormulario() {
     }
 }
 
-function password(){
-    let input = document.getElementById("password");
 
-    if(input.type == "password"){
-        input.type = "text";
-        document.getElementById("mostrar_pass").style.display = "none";
-        document.getElementById("ocultar_pass").style.display = "inline";
-    }
-    else{
-        input.type = "password";
-        document.getElementById("mostrar_pass").style.display = "inline";
-        document.getElementById("ocultar_pass").style.display = "none";
-    }   
 
-}
-
-document.getElementById("miFormulario").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita que se envíe el formulario automáticamente
-  
-    // Obtener los valores de los campos del formulario
+document.getElementById("mostrar_datos").addEventListener("click", function() {
+    event.preventDefault();
     var nombre = document.getElementById("nombre").value;
     var apellidoPaterno = document.getElementById("paterno").value;
     var apellidoMaterno = document.getElementById("materno").value;
@@ -128,16 +104,32 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
     var fechaNacimiento = document.getElementById("fecha_nac").value;
     var password = document.getElementById("password").value;
   
-    // Mostrar la información en el elemento con el id "respuesta"
-    var respuestaElemento = document.getElementById("respuesta");
-    respuestaElemento.innerHTML = "Nombre: " + nombre + "<br>"
-      + "Apellido Paterno: " + apellidoPaterno + "<br>"
-      + "Apellido Materno: " + apellidoMaterno + "<br>"
-      + "RUT: " + rut + "<br>"
-      + "Email: " + email + "<br>"
-      + "Dirección: " + direccion + "<br>"
-      + "Teléfono: " + telefono + "<br>"
-      + "Comentarios: " + comentarios + "<br>"
-      + "Fecha de Nacimiento: " + fechaNacimiento + "<br>"
-      + "Contraseña: " + password;
+    // Verificar si se han completado todos los campos
+    if (
+      nombre === "" ||
+      apellidoPaterno === "" ||
+      apellidoMaterno === "" ||
+      rut === "" ||
+      email === "" ||
+      direccion === "" ||
+      telefono === "" ||
+      password === ""
+    ) {
+      alert("Por favor, complete todos los campos obligatorios del formulario.");
+      return;
+    }
+  
+    // Mostrar la información en una alerta
+    var mensaje = "Nombre: " + nombre + "\n" +
+      "Apellido Paterno: " + apellidoPaterno + "\n" +
+      "Apellido Materno: " + apellidoMaterno + "\n" +
+      "RUT: " + rut + "\n" +
+      "Email: " + email + "\n" +
+      "Dirección: " + direccion + "\n" +
+      "Teléfono: " + telefono + "\n" +
+      "Comentarios: " + comentarios + "\n" +
+      "Fecha de Nacimiento: " + fechaNacimiento + "\n" +
+      "Contraseña: " + password;
+  
+    alert(mensaje);
 });

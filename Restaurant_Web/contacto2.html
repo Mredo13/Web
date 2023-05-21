@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    
     <title>Contacto</title>
 
     <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
@@ -113,14 +113,14 @@
         
         <div class="col-10">
             <label for="email" class="form-label">Email</label>
-            <input type="email" onkeyup="validarFormulario()" onblur="validarFormulario()" class="form-control" id="email" name="email"
+            <input type="email" onkeyup="validarEmail()" onblur="validarEmail()" class="form-control" id="email" name="email"
                 placeholder="correo@correo.com">
             <small id="error_email" class="text-danger">Formato ingresado es incorrecto</small>
         </div>        
 
         <div class="col-10">
             <label for="Direccion" class="form-label">Direccion</label>
-            <input type="text" onkeyup="validarFormulario()" onblur="validarFormulario()" class="form-control" id="direccion" name="direccion"
+            <input type="text" onkeyup="validarDireccion()" onblur="validarDireccion()" class="form-control" id="direccion" name="direccion"
                 placeholder="Ingrese su direccion">
             <small id="error_direccion_min" class="text-danger">Debes ingresar tu direccion</small>
             <small id="error_direccion_max" class="text-danger">La direccion excede el largo máximo permitido</small>
@@ -128,7 +128,7 @@
 
         <div class="col-10">
             <label for="Telefono" class="form-label">Telefono</label>
-            <input type="text" onkeyup="validarFormulario()" onblur="validarFormulario()" class="form-control" id="telefono" name="telefono" placeholder="Ej. 966904820">
+            <input type="text" onkeyup="validarTelefono()" onblur="validarTelefono()" class="form-control" id="telefono" name="telefono" placeholder="Ej. 966904820">
             <small id="error_telefono" class="text-danger">Debes ingresar tu telefono</small>
         </div>
 
@@ -147,11 +147,7 @@
         <div class="col-10">
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
             <div class="input-group">
-            <input type="password" onkeyup="validarFormulario()" onblur="validarFormulario()" class="form-control" id="password" name="password">
-            <button onclick="password()" class="btn btn-secondary">
-                <i id="mostrar_pass" class="fa-regular fa-eye"></i>
-                <i id="ocultar_pass" class="fa-regular fa-eye-slash"></i>
-            </button>
+            <input type="password" onkeyup="validarContraseña()" onblur="validarContraseña()" class="form-control" id="password" name="password">
         </div>
             <small id="error_password" class="text-danger">
                 <ul>
@@ -163,7 +159,7 @@
         </div>
     
         <div class="col-30">
-        <button class="btn btn-primary mt-2" type="submit">MOSTRAR DATOS</button>   
+            <button id="mostrar_datos" class="btn btn-primary mt-2" type="submit">MOSTRAR DATOS</button>
         </div>
     </form>
 </section>

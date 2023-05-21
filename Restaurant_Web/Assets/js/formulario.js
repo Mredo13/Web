@@ -1,81 +1,35 @@
-function validarFormulario() {
-    
-    let nombre = document.getElementById("nombre").value;
-    let paterno = document.getElementById("paterno").value;
-    let materno = document.getElementById("materno").value;
-    let rut = document.getElementById("rut").value;
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-    let direccion = document.getElementById("direccion").value;
-    let telefono = document.getElementById("telefono").value;   
-    let fecha_nac = document.getElementById("fecha_nac").value;      
-
-    //Validación Nombre
-    if (nombre.trim().length == 0){
-        document.getElementById("error_nombre_min").style.display = "inline";
-        document.getElementById("error_nombre_max").style.display = "none";
-        document.getElementById("nombre").classList.add("is-invalid");
+function validarNombres(tipo){
+    let elemento = document.getElementById(tipo);   
+    if (elemento.value.trim().length == 0){
+        document.getElementById(`error_${tipo}_min`).style.display = "inline";
+        document.getElementById(`error_${tipo}_max`).style.display = "none";
+        elemento.classList.add("is-invalid");
     }
-    else if(nombre.trim().length > 15){
-        document.getElementById("error_nombre_max").style.display = "inline";
-        document.getElementById("error_nombre_min").style.display = "none";
-        document.getElementById("nombre").classList.add("is-invalid");
+    else if(elemento.value.trim().length > 15){
+        document.getElementById(`error_${tipo}_max`).style.display = "inline";
+        document.getElementById(`error_${tipo}_min`).style.display = "none";
+        elemento.classList.add("is-invalid");
     }
     else{
-        document.getElementById("error_nombre_min").style.display = "none";
-        document.getElementById("error_nombre_max").style.display = "none";
-        document.getElementById("nombre").classList.remove("is-invalid");
-        document.getElementById("nombre").classList.add("is-valid");
+        document.getElementById(`error_${tipo}_min`).style.display = "none";
+        document.getElementById(`error_${tipo}_max`).style.display = "none";
+        elemento.classList.remove("is-invalid");
+        elemento.classList.add("is-valid");
     }
-
-    //Validación Apellido Paterno
-    if (paterno.trim().length == 0){
-        document.getElementById("error_paterno_min").style.display = "inline";
-        document.getElementById("error_paterno_max").style.display = "none";
-        document.getElementById("paterno").classList.add("is-invalid");
-    }
-    else if(paterno.trim().length > 15){
-        document.getElementById("error_paterno_max").style.display = "inline";
-        document.getElementById("error_paterno_min").style.display = "none";
-        document.getElementById("paterno").classList.add("is-invalid");
-    }
-    else{
-        document.getElementById("error_paterno_min").style.display = "none";
-        document.getElementById("error_paterno_max").style.display = "none";
-        document.getElementById("paterno").classList.remove("is-invalid");
-        document.getElementById("paterno").classList.add("is-valid");
-    }
-       
-    //Validación Apellido Materno
-       if (materno.trim().length == 0){
-        document.getElementById("error_materno_min").style.display = "inline";
-        document.getElementById("error_materno_max").style.display = "none";
-        document.getElementById("materno").classList.add("is-invalid");
-    }
-    else if(materno.trim().length > 15){
-        document.getElementById("error_materno_max").style.display = "inline";
-        document.getElementById("error_materno_min").style.display = "none";
-        document.getElementById("materno").classList.add("is-invalid");
-    }
-    else{
-        document.getElementById("error_materno_min").style.display = "none";
-        document.getElementById("error_materno_max").style.display = "none";
-        document.getElementById("materno").classList.remove("is-invalid");
-        document.getElementById("materno").classList.add("is-valid");
-    }    
-
-    //Validación rut
-    if (rut.trim().length == 0){
+}
+function validarRut(){
+    let rut = document.getElementById("rut");
+    if (rut.value.trim().length == 0){
         document.getElementById("error_rut").style.display = "inline";
-        document.getElementById("rut").classList.add("is-invalid");
+        rut.classList.add("is-invalid");
     }
     else{
         document.getElementById("error_rut").style.display = "none";
-        document.getElementById("rut").classList.remove("is-invalid");
-        document.getElementById("rut").classList.add("is-valid");
+        rut.classList.remove("is-invalid");
+        rut.classList.add("is-valid");
     }
-
-    //Validacion EMAIL
+}
+function validarEmail(){
     let rgEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
     if (rgEmail.test(email) == false){  
         document.getElementById("error_email").style.display = "inline";
@@ -87,14 +41,16 @@ function validarFormulario() {
         document.getElementById("email").classList.add("is-valid");
 
     }
-
-    //Validación direccion
-    if (direccion.trim().length == 0){
+}
+function validarDireccion(){
+    let direccion = document.getElementById("direccion");
+    
+    if (direccion.value.trim().length == 0){
         document.getElementById("error_direccion_min").style.display = "inline";
         document.getElementById("error_direccion_max").style.display = "none";
         document.getElementById("direccion").classList.add("is-invalid");
     }
-    else if(nombre.trim().length > 20){
+    else if(nombre.value.trim().length > 20){
         document.getElementById("error_direccion_max").style.display = "inline";
         document.getElementById("error_direccion_min").style.display = "none";
         document.getElementById("direccion").classList.add("is-invalid");
@@ -105,9 +61,10 @@ function validarFormulario() {
         document.getElementById("direccion").classList.remove("is-invalid");
         document.getElementById("direccion").classList.add("is-valid");
     }
-
-    //Validación telefono
-    if (telefono.trim().length == 0){
+}
+function validarTelefono(){
+    let telefono = document.getElementById("telefono");
+    if (telefono.value.trim().length == 0){
         document.getElementById("error_telefono").style.display = "inline";
         document.getElementById("telefono").classList.add("is-invalid");
     }
@@ -116,8 +73,8 @@ function validarFormulario() {
         document.getElementById("telefono").classList.remove("is-invalid");
         document.getElementById("telefono").classList.add("is-valid");
     }
-
-    //Validacion PASSWORD
+}
+function validarContraseña(){    
     let rgPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{6,10}$/;
     if(rgPass.test(password) == false){
         document.getElementById("error_password").style.display = "inline";
@@ -129,7 +86,6 @@ function validarFormulario() {
         document.getElementById("password").classList.add("is-valid");
     }
 }
-
 function password(){
     let input = document.getElementById("password");
 
@@ -146,10 +102,7 @@ function password(){
 
 }
 
-document.getElementById("miFormulario").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita que se envíe el formulario automáticamente
-  
-    // Obtener los valores de los campos del formulario
+document.getElementById("mostrar_datos").addEventListener("click", function() {
     var nombre = document.getElementById("nombre").value;
     var apellidoPaterno = document.getElementById("paterno").value;
     var apellidoMaterno = document.getElementById("materno").value;
@@ -161,16 +114,32 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
     var fechaNacimiento = document.getElementById("fecha_nac").value;
     var password = document.getElementById("password").value;
   
-    // Mostrar la información en el elemento con el id "respuesta"
-    var respuestaElemento = document.getElementById("respuesta");
-    respuestaElemento.innerHTML = "Nombre: " + nombre + "<br>"
-      + "Apellido Paterno: " + apellidoPaterno + "<br>"
-      + "Apellido Materno: " + apellidoMaterno + "<br>"
-      + "RUT: " + rut + "<br>"
-      + "Email: " + email + "<br>"
-      + "Dirección: " + direccion + "<br>"
-      + "Teléfono: " + telefono + "<br>"
-      + "Comentarios: " + comentarios + "<br>"
-      + "Fecha de Nacimiento: " + fechaNacimiento + "<br>"
-      + "Contraseña: " + password;
+    // Verificar si se han completado todos los campos
+    if (
+      nombre === "" ||
+      apellidoPaterno === "" ||
+      apellidoMaterno === "" ||
+      rut === "" ||
+      email === "" ||
+      direccion === "" ||
+      telefono === "" ||
+      password === ""
+    ) {
+      alert("Por favor, complete todos los campos obligatorios del formulario.");
+      return;
+    }
+  
+    // Mostrar la información en una alerta
+    var mensaje = "Nombre: " + nombre + "\n" +
+      "Apellido Paterno: " + apellidoPaterno + "\n" +
+      "Apellido Materno: " + apellidoMaterno + "\n" +
+      "RUT: " + rut + "\n" +
+      "Email: " + email + "\n" +
+      "Dirección: " + direccion + "\n" +
+      "Teléfono: " + telefono + "\n" +
+      "Comentarios: " + comentarios + "\n" +
+      "Fecha de Nacimiento: " + fechaNacimiento + "\n" +
+      "Contraseña: " + password;
+  
+    alert(mensaje);
 });
