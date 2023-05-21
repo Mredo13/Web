@@ -1,119 +1,46 @@
-document.getElementById("error_nombre_min").style.display="none";
-document.getElementById("error_nombre_max").style.display="none";
-document.getElementById("error_paterno_min").style.display="none";
-document.getElementById("error_paterno_max").style.display="none";
-document.getElementById("error_materno_min").style.display="none";
-document.getElementById("error_materno_max").style.display="none";
-document.getElementById("error_rut").style.display="none";
-document.getElementById("error_email").style.display="none";
-document.getElementById("error_direccion_min").style.display="none";
-document.getElementById("error_direccion_max").style.display="none";
-document.getElementById("error_telefono").style.display="none";
-document.getElementById("ocultar_pass").style.display="none";
-document.getElementById("error_password").style.display="none";
-document.getElementById("error_nacimiento").style.display="none";
-document.getElementById("error_nacimiento").style.display="none";
-
 function validarNombres(tipo){
-    let elemento = document.getElementById(tipo).value;
-    if (elemento.trim().length == 0){
+    let elemento = document.getElementById(tipo);   
+    if (elemento.value.trim().length == 0){
         document.getElementById(`error_${tipo}_min`).style.display = "inline";
-        document.getElementById(`error_${tipo}max`).style.display = "none";
-        document.getElementById(tipo).classList.add("is-invalid");
+        document.getElementById(`error_${tipo}_max`).style.display = "none";
+        elemento.classList.add("is-invalid");
     }
-    else if(elemento.trim().length > 20){
+    else if(elemento.value.trim().length > 15){
         document.getElementById(`error_${tipo}_max`).style.display = "inline";
         document.getElementById(`error_${tipo}_min`).style.display = "none";
-        document.getElementById(tipo).classList.add("is-invalid");
+        elemento.classList.add("is-invalid");
     }
     else{
         document.getElementById(`error_${tipo}_min`).style.display = "none";
         document.getElementById(`error_${tipo}_max`).style.display = "none";
-        document.getElementById(tipo).classList.remove("is-invalid");
-        document.getElementById(tipo).classList.add("is-valid");
+        elemento.classList.remove("is-invalid");
+        elemento.classList.add("is-valid");
     }
 }
+function validarRut(){
+    let rut = document.getElementById("rut");
+    if (rut.value.trim().length == 0){
+        document.getElementById("error_rut").style.display = "inline";
+        rut.classList.add("is-invalid");
+    }
+    else{
+        document.getElementById("error_rut").style.display = "none";
+        rut.classList.remove("is-invalid");
+        rut.classList.add("is-valid");
+    }
+}
+
 function validarFormulario() {
     
-    let nombre = document.getElementById("nombre").value;
-    // validarNombres(document.getElementById("nombre").value,"nombre");
-    let paterno = document.getElementById("paterno").value;
-    let materno = document.getElementById("materno").value;
-    let rut = document.getElementById("rut").value;
+
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let direccion = document.getElementById("direccion").value;
     let telefono = document.getElementById("telefono").value;   
     let fecha_nac = document.getElementById("fecha_nac").value;      
 
-    //Validación Nombre
-    // validarNombresyDireccion(nombre,"nombre");
+ 
 
-    if (nombre.trim().length == 0){
-        document.getElementById("error_nombre_min").style.display = "inline";
-        document.getElementById("error_nombre_max").style.display = "none";
-        document.getElementById("nombre").classList.add("is-invalid");
-    }
-    else if(nombre.trim().length > 15){
-        document.getElementById("error_nombre_max").style.display = "inline";
-        document.getElementById("error_nombre_min").style.display = "none";
-        document.getElementById("nombre").classList.add("is-invalid");
-    }
-    else{
-        document.getElementById("error_nombre_min").style.display = "none";
-        document.getElementById("error_nombre_max").style.display = "none";
-        document.getElementById("nombre").classList.remove("is-invalid");
-        document.getElementById("nombre").classList.add("is-valid");
-    }
-
-    //Validación Apellido Paterno
-    // validarNombres(paterno,"paterno");
-    if (paterno.trim().length == 0){
-        document.getElementById("error_apellido_min").style.display = "inline";
-        document.getElementById("error_apellido_max").style.display = "none";
-        document.getElementById("paterno").classList.add("is-invalid");
-    }
-    else if(paterno.trim().length > 15){
-        document.getElementById("error_paterno_max").style.display = "inline";
-        document.getElementById("error_paterno_min").style.display = "none";
-        document.getElementById("paterno").classList.add("is-invalid");
-    }
-    else{
-        document.getElementById("error_paterno_min").style.display = "none";
-        document.getElementById("error_paterno_max").style.display = "none";
-        document.getElementById("paterno").classList.remove("is-invalid");
-        document.getElementById("paterno").classList.add("is-valid");
-    }
-       
-    //Validación Apellido Materno
-    // validarNombres(materno,"materno");
-       if (materno.trim().length == 0){
-        document.getElementById("error_materno_min").style.display = "inline";
-        document.getElementById("error_materno_max").style.display = "none";
-        document.getElementById("materno").classList.add("is-invalid");
-    }
-    else if(materno.trim().length > 15){
-        document.getElementById("error_materno_max").style.display = "inline";
-        document.getElementById("error_materno_min").style.display = "none";
-        document.getElementById("materno").classList.add("is-invalid");
-    }
-    else{
-        document.getElementById("error_materno_min").style.display = "none";
-        document.getElementById("error_materno_max").style.display = "none";
-        document.getElementById("materno").classList.remove("is-invalid");
-        document.getElementById("materno").classList.add("is-valid");
-    }    
-
-    //Validación rut
-    if (rut.trim().length == 0){
-        document.getElementById("error_rut").style.display = "inline";
-        document.getElementById("rut").classList.add("is-invalid");
-    }
-    else{
-        document.getElementById("error_rut").style.display = "none";
-        document.getElementById("rut").classList.remove("is-invalid");
-        document.getElementById("rut").classList.add("is-valid");
-    }
 
     //Validacion EMAIL
     let rgEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
@@ -168,6 +95,22 @@ function validarFormulario() {
         document.getElementById("password").classList.remove("is-invalid");
         document.getElementById("password").classList.add("is-valid");
     }
+}
+
+function password(){
+    let input = document.getElementById("password");
+
+    if(input.type == "password"){
+        input.type = "text";
+        document.getElementById("mostrar_pass").style.display = "none";
+        document.getElementById("ocultar_pass").style.display = "inline";
+    }
+    else{
+        input.type = "password";
+        document.getElementById("mostrar_pass").style.display = "inline";
+        document.getElementById("ocultar_pass").style.display = "none";
+    }   
+
 }
 
 document.getElementById("miFormulario").addEventListener("submit", function(event) {
