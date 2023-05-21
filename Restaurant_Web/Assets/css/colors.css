@@ -8,7 +8,7 @@
     --noice: rgba(255, 193, 7, 1);
 
     --text-top: black;
-    --text-middle: white;
+    --text-middle: ;
     --text-bottom:black;
     --fg: var(--clr-light);/*foreground = primer plano*/
     --bg: var(--crl-dark);
@@ -30,18 +30,19 @@
     --bg: var(--crl-dark);
 }
 .colors-top-bottom{
-    background-color: var(--bg);
+    background-color: #c6cddc;
     transition: color 0.7s ease-in-out, background-color 0.2s ease-in-out;
 }
 .colors-middle{
-    background: linear-gradient(125deg, var(--clr-primary) 25%, var(--clr-accent) 100%);
+    background: #fefefe;
     color: var(--text-middle);
     transition: color 1s ease-in-out;
 }
 .color-text-bottom{
-    color: var(--text-bottom);
+    color: #c6cddc;
     transition: color 0.7s ease-in-out, background-color 0.2s ease-in-out;
 }
+
 .logo{
     display: flex;
 }
@@ -80,25 +81,7 @@
     justify-content: center;
     align-content: center;
 }
-/*utilizar para editar el boton del footer
-.btn{
-    padding: 1em 2em;
-    text-decoration: none;
-    text-transform: uppercase;
-    border-radius: 5px;
-    position: relative;
-    border: none;
-    line-height: 1;
-    flex-direction: row;
-    margin-inline: 1em;
-    background-color: var(--clr-accent);
-    color: var(--fg);
-    
-}
-.btn:hover{
-    color: red;
-    background-color: green;
-}*/
+
 
 
 .imagen{
@@ -111,4 +94,13 @@
     font-size: 200%;
     cursor: pointer;
     color:yellow;
+}
+.diseño-header{
+    padding: 0rem 40px;
+    border-radius: 0 0 10px 10px;
+    margin: 0 2rem;
+}
+
+.navbar{
+    padding: 0rem 0rem;
 }

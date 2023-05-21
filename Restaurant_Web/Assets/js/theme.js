@@ -12,25 +12,25 @@ toggle.addEventListener('click',function(){
     this.classList.toggle('bi-brightness-high-fill');
     if(html.getAttribute("new-data-bs-theme")=="dark"){
         
-        body.style.background ='white';
+        //body.style.background ='white';
         html.setAttribute("new-data-bs-theme","light")
-        body.style.color ='black';
-        body.style.transition = '2s';
+        //body.style.color ='black';
+        //body.style.transition = '2s';
  
-        var contenedor = primaryColor;
+        /*var contenedor = primaryColor;
         primaryColor= secondaryColor;
-        secondaryColor= contenedor;
+        secondaryColor= contenedor;*/
     }else{
 
-        body.style.background ='black';
+        //body.style.background ='black';
         
         html.setAttribute("new-data-bs-theme","dark")
-        body.style.color ='white';
+        /*body.style.color ='white';
         body.style.transition = '2s';
 
         var contenedor = primaryColor;
         primaryColor= secondaryColor;
-        secondaryColor= contenedor;
+        secondaryColor= contenedor;*/
     }  
 })
 /*

@@ -1,35 +1,42 @@
 document.getElementById("error_nombre_min").style.display="none";
 document.getElementById("error_nombre_max").style.display="none";
-
 document.getElementById("error_paterno_min").style.display="none";
 document.getElementById("error_paterno_max").style.display="none";
-
 document.getElementById("error_materno_min").style.display="none";
 document.getElementById("error_materno_max").style.display="none";
-
 document.getElementById("error_rut").style.display="none";
-
 document.getElementById("error_email").style.display="none";
-
 document.getElementById("error_direccion_min").style.display="none";
 document.getElementById("error_direccion_max").style.display="none";
-
 document.getElementById("error_telefono").style.display="none";
-
 document.getElementById("ocultar_pass").style.display="none";
 document.getElementById("error_password").style.display="none";
-
+document.getElementById("error_nacimiento").style.display="none";
 document.getElementById("error_nacimiento").style.display="none";
 
-document.getElementById("error_nacimiento").style.display="none";
-
-
-
-
-
+function validarNombres(tipo){
+    let elemento = document.getElementById(tipo).value;
+    if (elemento.trim().length == 0){
+        document.getElementById(`error_${tipo}_min`).style.display = "inline";
+        document.getElementById(`error_${tipo}max`).style.display = "none";
+        document.getElementById(tipo).classList.add("is-invalid");
+    }
+    else if(elemento.trim().length > 20){
+        document.getElementById(`error_${tipo}_max`).style.display = "inline";
+        document.getElementById(`error_${tipo}_min`).style.display = "none";
+        document.getElementById(tipo).classList.add("is-invalid");
+    }
+    else{
+        document.getElementById(`error_${tipo}_min`).style.display = "none";
+        document.getElementById(`error_${tipo}_max`).style.display = "none";
+        document.getElementById(tipo).classList.remove("is-invalid");
+        document.getElementById(tipo).classList.add("is-valid");
+    }
+}
 function validarFormulario() {
     
     let nombre = document.getElementById("nombre").value;
+    // validarNombres(document.getElementById("nombre").value,"nombre");
     let paterno = document.getElementById("paterno").value;
     let materno = document.getElementById("materno").value;
     let rut = document.getElementById("rut").value;
@@ -40,6 +47,8 @@ function validarFormulario() {
     let fecha_nac = document.getElementById("fecha_nac").value;      
 
     //Validación Nombre
+    // validarNombresyDireccion(nombre,"nombre");
+
     if (nombre.trim().length == 0){
         document.getElementById("error_nombre_min").style.display = "inline";
         document.getElementById("error_nombre_max").style.display = "none";
@@ -58,6 +67,7 @@ function validarFormulario() {
     }
 
     //Validación Apellido Paterno
+    // validarNombres(paterno,"paterno");
     if (paterno.trim().length == 0){
         document.getElementById("error_apellido_min").style.display = "inline";
         document.getElementById("error_apellido_max").style.display = "none";
@@ -76,6 +86,7 @@ function validarFormulario() {
     }
        
     //Validación Apellido Materno
+    // validarNombres(materno,"materno");
        if (materno.trim().length == 0){
         document.getElementById("error_materno_min").style.display = "inline";
         document.getElementById("error_materno_max").style.display = "none";
@@ -157,22 +168,6 @@ function validarFormulario() {
         document.getElementById("password").classList.remove("is-invalid");
         document.getElementById("password").classList.add("is-valid");
     }
-}
-
-function password(){
-    let input = document.getElementById("password");
-
-    if(input.type == "password"){
-        input.type = "text";
-        document.getElementById("mostrar_pass").style.display = "none";
-        document.getElementById("ocultar_pass").style.display = "inline";
-    }
-    else{
-        input.type = "password";
-        document.getElementById("mostrar_pass").style.display = "inline";
-        document.getElementById("ocultar_pass").style.display = "none";
-    }   
-
 }
 
 document.getElementById("miFormulario").addEventListener("submit", function(event) {
