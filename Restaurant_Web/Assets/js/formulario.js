@@ -1,32 +1,3 @@
-document.getElementById("error_nombre_min").style.display="none";
-document.getElementById("error_nombre_max").style.display="none";
-
-document.getElementById("error_paterno_min").style.display="none";
-document.getElementById("error_paterno_max").style.display="none";
-
-document.getElementById("error_materno_min").style.display="none";
-document.getElementById("error_materno_max").style.display="none";
-
-document.getElementById("error_rut").style.display="none";
-
-document.getElementById("error_email").style.display="none";
-
-document.getElementById("error_direccion_min").style.display="none";
-document.getElementById("error_direccion_max").style.display="none";
-
-document.getElementById("error_telefono").style.display="none";
-
-document.getElementById("ocultar_pass").style.display="none";
-document.getElementById("error_password").style.display="none";
-
-document.getElementById("error_nacimiento").style.display="none";
-
-document.getElementById("error_nacimiento").style.display="none";
-
-
-
-
-
 function validarFormulario() {
     
     let nombre = document.getElementById("nombre").value;
@@ -59,8 +30,8 @@ function validarFormulario() {
 
     //Validación Apellido Paterno
     if (paterno.trim().length == 0){
-        document.getElementById("error_apellido_min").style.display = "inline";
-        document.getElementById("error_apellido_max").style.display = "none";
+        document.getElementById("error_paterno_min").style.display = "inline";
+        document.getElementById("error_paterno_max").style.display = "none";
         document.getElementById("paterno").classList.add("is-invalid");
     }
     else if(paterno.trim().length > 15){
