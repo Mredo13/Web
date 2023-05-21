@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es" new-data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>OpenWeatherMap</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Assets/css/colors.css">
+    <link rel="stylesheet" href="Assets/css/estilo-alterno.css">
+    <link rel="stylesheet" href="Assets/css/styles.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg colors-top-bottom navbar-dark"> 
+        <div class="container">
+            <a class="navbar-brand" href="#home.html">
+                <div class="logo">
+                    <img src="assets/img/Logo-final.png" alt="RESTAURANT">
+                    <h1>Los<br>Piñuflas</h1>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="new-nav-link" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="new-nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="new-nav-link  " href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="new-nav-link" href="historia.html">Historia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="new-nav-link" href="ubicacion.html">Ubicacion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="new-nav-link" href="OpenWeatherMap.html">OpenWeatherMap</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container-clock">
+                <h1 id="time">00:00:00</h1>
+                <p id="date">date</p>
+            </div>
+            <script src="Assets/js/clock.js"></script>
+        </div>
+        <i class="bi bi-brightness-high-fill" id="modoOscuro"></i>
+    
+        
+        
+    
+    
+    
+    
+    </nav>
+    
+    
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <section class="contenido colors-middle">
+        <div class="container my-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="input-group">
+                                <input type="text" id="ciudad_buscada" name="ciudad_buscada" class="form-control"
+                                    placeholder="Ingrese ciudad">
+                                <button type="button" id="buscar_clima" class="btn btn-outline-primary">Buscar</button>
+                                <button type="button" id="buscar" class="btn btn-outline-primary">Buscar prueba</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div id="info-clima" class="col-md-12 col-lg-10"></div>
+                                <div id="img-clima" class="col-md-12 col-lg-2"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <p>2023 - Derechos reservados &copy;<a href="https://openweathermap.org/"
+                                    target="_blank">OpenWeatherMap</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+            integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+    
+        <script src="assets/js/openweathermap.js"></script>
+        
+    </section>
+    
+    <!---------------------------------------------------------------------------------------------------------------------->
+        <footer class="container-fluid p-5 mt-0 colors-top-bottom">
+            <div class="row ">
+                <div class="col-md-4 text-center mb-3">
+                    <img class="d-inline footer-img" src="assets/img/Logo-final.png" alt="RESTAURANT">
+                    <br>
+                    <p class="d-inline color-text-bottom">&copy;2023 - Los Piñuflas. </p>
+                </div>
+                <div class="col-md-4 text-center mb-3">
+                    <h4 class="color-text-bottom">Mapa del sitio</h4>
+                    <hr>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="home.html" class="nav-link color-text-bottom">Home</a>
+                        </li>                   
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card bg-transparent">
+                        <div class="card-header">
+                            <h4 class="card-title color-text-bottom">Subscríbete a nuestro newsletter!!!</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Ingresa tu correo electrónico"
+                                    name="email_subscriptor">
+                                <button class="btn btn-outline-secondary" type="button"
+                                    id="button-subscriptor">Button</button>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <ul class="nav">
+                                <li>
+                                    <a class="nav-link color-text-bottom" href="http://www.instagram.com" target="">
+                                        <span class="fs-1">
+                                            <i class="fa-brands fa-facebook"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link color-text-bottom" href="http://www.facebook.com" target="">
+                                        <span class="fs-1">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link color-text-bottom" href="http://www.twitter.com" target="">
+                                        <span class="fs-1">
+                                            <i class="fa-brands fa-twitter"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link color-text-bottom" href="http://www.twitch.com" target="">
+                                        <span class="fs-1">
+                                            <i class="fa-brands fa-twitch"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link color-text-bottom" href="http://www.tiktok.com" target="">
+                                        <span class="fs-1">
+                                            <i class="fa-brands fa-tiktok"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="text-bg-primary">
+            <div class="row p-2 text-center color-text-bottom">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, voluptatibus.</p>
+            </div>
+        </footer>
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="Assets/js/theme.js" defer></script>
+        <script src="Assets/js/prueba.js" defer></script>
+        <script src="Assets/js/ye.js"></script>
+    </body>
+    </html>
