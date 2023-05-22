@@ -30,6 +30,7 @@ function validarRut(){
     }
 }
 function validarEmail(){
+    let email = document.getElementById("email").value;
     let rgEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
     if (rgEmail.test(email) == false){  
         document.getElementById("error_email").style.display = "inline";
@@ -40,7 +41,7 @@ function validarEmail(){
         document.getElementById("email").classList.remove("is-invalid");
         document.getElementById("email").classList.add("is-valid");
 
-    }
+    }
 }
 function validarDireccion(){
     let direccion = document.getElementById("direccion");
@@ -50,7 +51,7 @@ function validarDireccion(){
         document.getElementById("error_direccion_max").style.display = "none";
         document.getElementById("direccion").classList.add("is-invalid");
     }
-    else if(nombre.value.trim().length > 20){
+    else if(direccion.value.trim().length > 20){
         document.getElementById("error_direccion_max").style.display = "inline";
         document.getElementById("error_direccion_min").style.display = "none";
         document.getElementById("direccion").classList.add("is-invalid");
@@ -74,7 +75,8 @@ function validarTelefono(){
         document.getElementById("telefono").classList.add("is-valid");
     }
 }
-function validarContraseña(){    
+function validarContraseña(){ 
+    let password = document.getElementById("password").value;
     let rgPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{6,10}$/;
     if(rgPass.test(password) == false){
         document.getElementById("error_password").style.display = "inline";
@@ -86,23 +88,11 @@ function validarContraseña(){
         document.getElementById("password").classList.add("is-valid");
     }
 }
-function password(){
-    let input = document.getElementById("password");
 
-    if(input.type == "password"){
-        input.type = "text";
-        document.getElementById("mostrar_pass").style.display = "none";
-        document.getElementById("ocultar_pass").style.display = "inline";
-    }
-    else{
-        input.type = "password";
-        document.getElementById("mostrar_pass").style.display = "inline";
-        document.getElementById("ocultar_pass").style.display = "none";
-    }   
 
-}
 
 document.getElementById("mostrar_datos").addEventListener("click", function() {
+    event.preventDefault();
     var nombre = document.getElementById("nombre").value;
     var apellidoPaterno = document.getElementById("paterno").value;
     var apellidoMaterno = document.getElementById("materno").value;

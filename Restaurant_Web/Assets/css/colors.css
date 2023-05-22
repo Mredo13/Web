@@ -7,9 +7,13 @@
     --clr-accent2:yellow;
     --noice: rgba(255, 193, 7, 1);
 
+    --bg-top-bottom:#c6cddc;
+    --bg-middle:#fefefe;
+
     --text-top: black;
-    --text-middle: ;
+    --text-middle: black;
     --text-bottom:black;
+
     --fg: var(--clr-light);/*foreground = primer plano*/
     --bg: var(--crl-dark);
 }
@@ -23,6 +27,9 @@
     --clr-accent2:pink;
     --noice: rgba(255, 193, 7, 1);
 
+    --bg-top-bottom:black;
+    --bg-middle:#43464e;
+
     --text-top: white;
     --text-middle: white;
     --text-bottom:rgba(255, 193, 7, 1);
@@ -35,13 +42,6 @@
     border-radius: 0 0 10px 10px;
     margin: 0rem 2rem;
 }
-
-.ab{
-    padding-right: 0px;
-    border: solid 1px red;
-}
-
-
 
 .logo{
     display: flex;
@@ -58,7 +58,7 @@
 .new-nav-link{
     font-size: 1.1rem;
     font-family: "bebas neue";
-    padding: 0.5rem 1em;
+    padding: 0.5rem 0em;
     display: flex;
     flex-wrap: wrap;
     padding-left: 0;
@@ -72,8 +72,18 @@
     transition: color 1s ease-in-out, background-color 0.15s ease-in-out;
 }
 .new-nav-link:hover{
-    color:var(--clr-accent2);
+    
+    /*color:var(--clr-accent2);*/
     text-decoration: none; 
+}
+.diseño-nav-item{
+    padding-inline: 0.5rem;
+    padding-block: 0rem;
+}
+.diseño-nav-item:hover{
+    
+    background-color: var(--bg-middle);
+    border-radius: 0.5rem;
 }
 
 .div-buttons{
@@ -98,15 +108,15 @@
 
 
 .colors-top-bottom{
-    background-color: #c6cddc;
-    transition: color 0.7s ease-in-out, background-color 0.2s ease-in-out;
+    background-color: var(--bg-top-bottom);
+    transition: color 1.7s ease-in-out, background-color 1.2s ease-in-out;
 }
 .colors-middle{
-    background: #fefefe;
+    background: var(--bg-middle);
     color: var(--text-middle);
-    transition: color 1s ease-in-out;
+    transition: background-color 1.2s ease-in-out;
 }
 .color-text-bottom{
-    color: #c6cddc;
-    transition: color 0.7s ease-in-out, background-color 0.2s ease-in-out;
+    color: var(--bg-top-bottom);
+    transition: color 1.7s ease-in-out, background-color 1.2s ease-in-out;
 }

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    
     <title>Contacto</title>
 
     <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
@@ -148,10 +148,6 @@
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
             <div class="input-group">
             <input type="password" onkeyup="validarContraseña()" onblur="validarContraseña()" class="form-control" id="password" name="password">
-            <button onclick="password()" class="btn btn-secondary">
-                <i id="mostrar_pass" class="fa-regular fa-eye"></i>
-                <i id="ocultar_pass" class="fa-regular fa-eye-slash"></i>
-            </button>
         </div>
             <small id="error_password" class="text-danger">
                 <ul>
@@ -163,7 +159,7 @@
         </div>
     
         <div class="col-30">
-            <button class="btn btn-primary mt-2" type="submit">MOSTRAR DATOS</button>   
+            <button id="mostrar_datos" class="btn btn-primary mt-2" type="submit">MOSTRAR DATOS</button>
         </div>
     </form>
 </section>
