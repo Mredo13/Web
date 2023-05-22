@@ -38,7 +38,7 @@ function validarRut() {
   
     rut = rut.replace(/[^\dkK]+/g, '');
     if (rut.length < 2) {
-      document.getElementById("error_rut").style.display = "inline";
+      document.getElementById("error_rut_valido").style.display = "inline";
       rutInput.classList.add("is-invalid");
       return false;
     }
@@ -46,7 +46,7 @@ function validarRut() {
     var dv = rut.slice(-1).toUpperCase();
     var rutNumerico = parseInt(rut.slice(0, -1), 10);
     if (isNaN(rutNumerico)) {
-      document.getElementById("error_rut").style.display = "inline";
+      document.getElementById("error_rut_valido").style.display = "inline";
       rutInput.classList.add("is-invalid");
       return false;
     }
@@ -62,12 +62,12 @@ function validarRut() {
     var dvCalculado = 11 - (suma % 11);
     dvCalculado = dvCalculado === 11 ? '0' : dvCalculado === 10 ? 'K' : dvCalculado.toString();
     if (dv !== dvCalculado) {
-      document.getElementById("error_rut").style.display = "inline";
+      document.getElementById("error_rut_valido").style.display = "inline";
       rutInput.classList.add("is-invalid");
       return false;
     }
   
-    document.getElementById("error_rut").style.display = "none";
+    document.getElementById("error_rut_valido").style.display = "none";
     rutInput.classList.remove("is-invalid");
     rutInput.classList.add("is-valid");
     return true;

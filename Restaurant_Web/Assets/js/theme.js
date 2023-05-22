@@ -25,13 +25,13 @@ toggle.addEventListener('click',function(){
 })
 
 toggle.onmouseenter = function(e){
-    toggle.style.color=secondaryColor;
+    
     this.classList.toggle('bi-moon');
     toggle.style.transition="1s";
     this.classList.toggle('bi-brightness-high-fill');
 }
 toggle.onmouseleave = function(e){
-    toggle.style.color=primaryColor;
+    
     
     this.classList.toggle('bi-moon');
     toggle.style.transition="1s";
