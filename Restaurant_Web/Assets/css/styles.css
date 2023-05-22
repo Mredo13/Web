@@ -33,7 +33,8 @@ nav{
 .container-clock {
     margin-top: 1rem;
     text-align: center;
-    
+    margin-left: 4rem;
+    transition: color 1s ease-in-out, background-color 0.15s ease-in-out;
 }
 
 .container-clock h1 {
@@ -45,4 +46,12 @@ nav{
 .container-clock p {
     font-size: 1rem;
     font-family: "cabin sketch";
+}
+.datos-clima{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 3rem;
+    font-family: default;
+    transition: color 1s ease-in-out, background-color 0.15s ease-in-out;
 }

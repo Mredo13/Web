@@ -15,11 +15,10 @@
     <title>Contacto</title>
 
     <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
-
-    
-    <link rel="stylesheet" href="Assets/css/formulario2.css">
-    <link rel="stylesheet" href="Assets/css/styles.css">
     <link rel="stylesheet" href="Assets/css/colors.css">
+    
+    <link rel="stylesheet" href="Assets/css/formulario.css">
+    <link rel="stylesheet" href="Assets/css/styles.css">
 
     <link rel="icon" href="assets/img/utensils-solid.svg" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
@@ -31,7 +30,7 @@
 <body class="colors-middle" formato="dark">
     <nav id="ancla" class="navbar navbar-expand-lg colors-top-bottom navbar-dark diseño-header"> 
         <div class="container">
-            <a class="navbar-brand" href="#home.html">
+            <a class="navbar-brand">
                 <div class="logo">
                     <img src="assets/img/Logo-final.png" alt="RESTAURANT">
                     <h1>Los<br>Piñuflas</h1>
@@ -45,7 +44,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-0 mb-2 mb-lg-0">
                     <li class="nav-item diseño-nav-item">
-                        <a class="new-nav-link" aria-current="page" href="home.html">Home</a>
+                        <a class="new-nav-link" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item diseño-nav-item">
                         <a class="new-nav-link" href="contacto.html">Contacto</a>
@@ -57,116 +56,113 @@
                         <a class="new-nav-link" href="historia.html">Historia</a>
                     </li>
                     <li class="nav-item diseño-nav-item">
-                        <a class="new-nav-link" href="ubicacion.html">Ubicacion</a>
-                    </li>
-                    <li class="nav-item diseño-nav-item">
-                        <a class="new-nav-link" href="OpenWeatherMap.html">OpenWeatherMap</a>
-                    </li>
-                    <li class="nav-item diseño-nav-item">
-                        <a class="new-nav-link" href="pruebas.html">Pruebas</a>
-                    </li>
+                        <a class="new-nav-link" href="chistes.html">Payaso</a>
+                    </li>   
                 </ul>
+                <div class="container-clock">
+                    <h1 id="time">00:00:00</h1>
+                    <p id="date">date</p>
+                </div>
+                <i class="bi bi-brightness-high-fill" id="modoOscuro"></i>    
+                <div class="datos-clima">
+                    <div id="info-clima-comprimido"></div>
+                    <div id="img-clima-comprimido"></div>
+                </div>
             </div>
-            <div class="container-clock">
-                <h1 id="time">00:00:00</h1>
-                <p id="date">date</p>
-            </div>
-            <script src="Assets/js/clock.js"></script>
         </div>
-        <i class="bi bi-brightness-high-fill" id="modoOscuro"></i>        
     </nav>
     
 <!---------------------------------------------------------------------------------------------------------------------->
 
 
-    <section class="container my-4">
-        <form id="miFormulario">
-            <!-- Campos del formulario -->
-            <div class="col-10">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" onkeyup="validarNombres('nombre')" onblur="validarNombres('nombre')" class="form-control" id="nombre" name="nombre"
-                    placeholder="Ingrese su nombre">
-                <small id="error_nombre_min" class="text-danger">Debes ingresar tu nombre</small>
-                <small id="error_nombre_max" class="text-danger">El nombre excede el largo máximo permitido</small>
-            </div>
+<section class="container my-4">
+    <form id="miFormulario">
+        <!-- Campos del formulario -->
+        <div class="col-10">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" onkeyup="validarNombres('nombre')" onblur="validarNombres('nombre')" class="form-control" id="nombre" name="nombre"
+                placeholder="Ingrese su nombre">
+            <small id="error_nombre_min" class="text-danger">Debes ingresar tu nombre</small>
+            <small id="error_nombre_max" class="text-danger">El nombre excede el largo máximo permitido</small>
+        </div>
 
-            <div class="col-10">
-                <label for="paterno" class="form-label">Apellido paterno</label>
-                <input type="text" onkeyup="validarNombres('paterno')" onblur="validarNombres('paterno')" class="form-control" id="paterno" name="paterno"
-                    placeholder="Ingrese su apellido paterno">
-                <small id="error_paterno_min" class="text-danger">Debes ingresar su apellido</small>
-                <small id="error_paterno_max" class="text-danger">El apellido excede el largo máximo permitido</small>
-            </div>
+        <div class="col-10">
+            <label for="paterno" class="form-label">Apellido paterno</label>
+            <input type="text" onkeyup="validarNombres('paterno')" onblur="validarNombres('paterno')" class="form-control" id="paterno" name="paterno"
+                placeholder="Ingrese su apellido paterno">
+            <small id="error_paterno_min" class="text-danger">Debes ingresar su apellido</small>
+            <small id="error_paterno_max" class="text-danger">El apellido excede el largo máximo permitido</small>
+        </div>
 
-            <div class="col-10">
-                <label for="materno" class="form-label">Apellido materno</label>
-                <input type="text"  onkeyup="validarNombres('materno')" onblur="validarNombres('materno')" class="form-control" id="materno" name="materno"
-                    placeholder="Ingrese su apellido materno">
-                <small id="error_materno_min" class="text-danger">Debes ingresar su apellido</small>
-                <small id="error_materno_max" class="text-danger">El apellido excede el largo máximo permitido</small>
-            </div>
+        <div class="col-10">
+            <label for="materno" class="form-label">Apellido materno</label>
+            <input type="text"  onkeyup="validarNombres('materno')" onblur="validarNombres('materno')" class="form-control" id="materno" name="materno"
+                placeholder="Ingrese su apellido materno">
+            <small id="error_materno_min" class="text-danger">Debes ingresar su apellido</small>
+            <small id="error_materno_max" class="text-danger">El apellido excede el largo máximo permitido</small>
+        </div>
 
-            <div class="col-10">
-                <label for="Rut" class="form-label">Rut</label>
-                <input type="text" onkeyup="validarRut()" onblur="validarRut()" class="form-control" id="rut" name="rut" placeholder="Ej. 12345678-9">
-                <small id="error_rut" class="text-danger">Debes ingresar tu rut</small>
-            </div>
-            
-            <div class="col-10">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" onkeyup="validarEmail()" onblur="validarEmail()" class="form-control" id="email" name="email"
-                    placeholder="correo@correo.com">
-                <small id="error_email" class="text-danger">Formato ingresado es incorrecto</small>
-            </div>        
-
-            <div class="col-10">
-                <label for="Direccion" class="form-label">Direccion</label>
-                <input type="text" onkeyup="validarDireccion()" onblur="validarDireccion()" class="form-control" id="direccion" name="direccion"
-                    placeholder="Ingrese su direccion">
-                <small id="error_direccion_min" class="text-danger">Debes ingresar tu direccion</small>
-                <small id="error_direccion_max" class="text-danger">La direccion excede el largo máximo permitido</small>
-            </div>
-
-            <div class="col-10">
-                <label for="Telefono" class="form-label">Telefono</label>
-                <input type="text" onkeyup="validarTelefono()" onblur="validarTelefono()" class="form-control" id="telefono" name="telefono" placeholder="Ej. 966904820">
-                <small id="error_telefono" class="text-danger">Debes ingresar tu telefono</small>
-            </div>
-
-            <div class="col-10">
-                <label for="Comentarios" class="form-label">Comentarios</label>
-                <input type="text" class="form-control" id="Comentarios" >
-            </div>      
-            
-            
-            <div class="col-10">
-                <label for="fecha_nac" class="form-label">Fecha nacimiento</label>
-                <input type="date" class="form-control" id="fecha_nac" name="fecha_nac">
-                <small id="error_nacimiento" class="text-danger">Debes ingresar fecha de nacimiento</small>
-            </div>
-
-            <div class="col-10">
-                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                <div class="input-group">
-                <input type="password" onkeyup="validarContraseña()" onblur="validarContraseña()" class="form-control" id="password" name="password">
-            </div>
-                <small id="error_password" class="text-danger">
-                    <ul>
-                        <li>Entre 6 y 10 caracteres</li>
-                        <li>Debe tener al menos una mayúscula, una minúscula y un número</li>
-                        <li>No puede contener carecteres especiales</li>
-                    </ul>
-                </small>
-            </div>
+        <div class="col-10">
+            <label for="Rut" class="form-label">Rut</label>
+            <input type="text" onkeyup="validarRut()" onblur="validarRut()" class="form-control" id="rut" name="rut" placeholder="Ej. 12345678-9">
+            <small id="error_rut" class="text-danger">Debes ingresar tu rut</small>
+        </div>
         
-            <div class="col-30">
-                <button id="mostrar_datos" class="btn btn-primary mt-2" type="submit">MOSTRAR DATOS</button>
-            </div>
-        </form>
-    </section>
+        <div class="col-10">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" onkeyup="validarEmail()" onblur="validarEmail()" class="form-control" id="email" name="email"
+                placeholder="correo@correo.com">
+            <small id="error_email" class="text-danger">Formato ingresado es incorrecto</small>
+        </div>        
+
+        <div class="col-10">
+            <label for="Direccion" class="form-label">Direccion</label>
+            <input type="text" onkeyup="validarDireccion()" onblur="validarDireccion()" class="form-control" id="direccion" name="direccion"
+                placeholder="Ingrese su direccion">
+            <small id="error_direccion_min" class="text-danger">Debes ingresar tu direccion</small>
+            <small id="error_direccion_max" class="text-danger">La direccion excede el largo máximo permitido</small>
+        </div>
+
+        <div class="col-10">
+            <label for="Telefono" class="form-label">Telefono</label>
+            <input type="text" onkeyup="validarTelefono()" onblur="validarTelefono()" class="form-control" id="telefono" name="telefono" placeholder="Ej. 966904820">
+            <small id="error_telefono" class="text-danger">Debes ingresar tu telefono</small>
+        </div>
+
+        <div class="col-10">
+            <label for="Comentarios" class="form-label">Comentarios</label>
+            <input type="text" class="form-control" id="Comentarios" >
+        </div>      
+        
+        
+        <div class="col-10">
+            <label for="fecha_nac" class="form-label">Fecha nacimiento</label>
+            <input type="date" class="form-control" id="fecha_nac" name="fecha_nac">
+            <small id="error_nacimiento" class="text-danger">Debes ingresar fecha de nacimiento</small>
+        </div>
+
+        <div class="col-10">
+            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+            <div class="input-group">
+            <input type="password" onkeyup="validarContraseña()" onblur="validarContraseña()" class="form-control" id="password" name="password">
+        </div>
+            <small id="error_password" class="text-danger">
+                <ul>
+                    <li>Entre 6 y 10 caracteres</li>
+                    <li>Debe tener al menos una mayúscula, una minúscula y un número</li>
+                    <li>No puede contener carecteres especiales</li>
+                </ul>
+            </small>
+        </div>
     
-    <hr>
-    <h3 id="respuesta" class="text-center fw-light"></h3>
+        <div class="col-30">
+            <button id="mostrar_datos" class="btn btn-primary mt-2" type="submit">MOSTRAR DATOS</button>
+        </div>
+    </form>
+</section>
+  
+<hr>
+<h3 id="respuesta" class="text-center fw-light"></h3>
   
 <!---------------------------------------------------------------------------------------------------------------------->
     <footer class="colors-top-bottom diseño-footer row">
@@ -239,15 +235,16 @@
             </div>
         </div>
     </footer>
-
+<!---------------------------------------------------------------------------------------------------------------------->    
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="Assets/js/formulario.js"></script>
+    <script src="Assets/js/theme.js"></script>
+    <script src="Assets/js/openweathermap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
         integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script src="Assets/js/formulario.js"></script>
-    <script src="Assets/js/theme.js"></script>
+    <script src="Assets/js/clock.js"></script>
 
 
 </body>

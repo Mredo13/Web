@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="Assets/css/estilo-alterno.css">
     <link rel="stylesheet" href="Assets/css/colors.css">
+    <link rel="stylesheet" href="Assets/css/styles.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -22,7 +23,7 @@
 <body class="colors-middle" formato="dark">
     <nav id="ancla" class="navbar navbar-expand-lg colors-top-bottom navbar-dark diseño-header"> 
         <div class="container">
-            <a class="navbar-brand" href="#home.html">
+            <a class="navbar-brand">
                 <div class="logo">
                     <img src="assets/img/Logo-final.png" alt="RESTAURANT">
                     <h1>Los<br>Piñuflas</h1>
@@ -36,7 +37,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-0 mb-2 mb-lg-0">
                     <li class="nav-item diseño-nav-item">
-                        <a class="new-nav-link" aria-current="page" href="home.html">Home</a>
+                        <a class="new-nav-link" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item diseño-nav-item">
                         <a class="new-nav-link" href="contacto.html">Contacto</a>
@@ -48,23 +49,20 @@
                         <a class="new-nav-link" href="historia.html">Historia</a>
                     </li>
                     <li class="nav-item diseño-nav-item">
-                        <a class="new-nav-link" href="ubicacion.html">Ubicacion</a>
-                    </li>
-                    <li class="nav-item diseño-nav-item">
-                        <a class="new-nav-link" href="OpenWeatherMap.html">OpenWeatherMap</a>
-                    </li>
-                    <li class="nav-item diseño-nav-item">
-                        <a class="new-nav-link" href="pruebas.html">Pruebas</a>
-                    </li>
+                        <a class="new-nav-link" href="chistes.html">Payaso</a>
+                    </li>   
                 </ul>
+                <div class="container-clock">
+                    <h1 id="time">00:00:00</h1>
+                    <p id="date">date</p>
+                </div>
+                <i class="bi bi-brightness-high-fill" id="modoOscuro"></i>    
+                <div class="datos-clima">
+                    <div id="info-clima-comprimido"></div>
+                    <div id="img-clima-comprimido"></div>
+                </div>
             </div>
-            <div class="container-clock">
-                <h1 id="time">00:00:00</h1>
-                <p id="date">date</p>
-            </div>
-            <script src="Assets/js/clock.js"></script>
         </div>
-        <i class="bi bi-brightness-high-fill" id="modoOscuro"></i>        
     </nav>
     
     <!---------------------------------------------------------------------------------------------------------------------->
@@ -84,82 +82,82 @@
         </div>
     </section>
 <!---------------------------------------------------------------------------------------------------------------------->    
-<footer class="colors-top-bottom diseño-footer row">
-    <div class="col-md-4 text-center">
-        <img class="d-inline footer-img" src="assets/img/Logo-final.png" alt="RESTAURANT">
-        <br>
-        <p class="d-inline color-text-bottom">&copy;2023 - Los Piñuflas. </p>
-    </div>
-    <div class="col-md-4 text-center">
-        <h4 class="color-text-bottom">Mapa del sitio</h4>
-        <hr>
-        <ul class="nav flex-column mt-5">
-            <li class="nav-item">
-                <a href="#ancla" class="new-nav-link-bottom color-text-bottom diseño-nav-item"><i class="bi bi-arrow-bar-up"></i></a>
-            </li>                   
-        </ul>
-    </div>
-    <div class="col-md-4">
-        <div class="card bg-transparent">
-            <div class="card-header">
-                <h4 class="card-title color-text-bottom">Subscríbete a nuestro newsletter!!!</h4>
-            </div>
-            <div class="card-body">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Ingresa tu correo electrónico"
-                        name="email_subscriptor">
-                    <button class="btn btn-outline-secondary" type="button"
-                        id="button-subscriptor">Button</button>
+    <footer class="colors-top-bottom diseño-footer row">
+        <div class="col-md-4 text-center">
+            <img class="d-inline footer-img" src="assets/img/Logo-final.png" alt="RESTAURANT">
+            <br>
+            <p class="d-inline color-text-bottom">&copy;2023 - Los Piñuflas. </p>
+        </div>
+        <div class="col-md-4 text-center">
+            <h4 class="color-text-bottom">Mapa del sitio</h4>
+            <hr>
+            <ul class="nav flex-column mt-5">
+                <li class="nav-item">
+                    <a href="#ancla" class="new-nav-link-bottom color-text-bottom diseño-nav-item"><i class="bi bi-arrow-bar-up"></i></a>
+                </li>                   
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-transparent">
+                <div class="card-header">
+                    <h4 class="card-title color-text-bottom">Subscríbete a nuestro newsletter!!!</h4>
+                </div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Ingresa tu correo electrónico"
+                            name="email_subscriptor">
+                        <button class="btn btn-outline-secondary" type="button"
+                            id="button-subscriptor">Button</button>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <ul class="nav">
+                        <li>
+                            <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.instagram.com" target="">
+                                <span class="fs-1">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.facebook.com" target="">
+                                <span class="fs-1">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.twitter.com" target="">
+                                <span class="fs-1">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.twitch.com" target="">
+                                <span class="fs-1">
+                                    <i class="fa-brands fa-twitch"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.tiktok.com" target="">
+                                <span class="fs-1">
+                                    <i class="fa-brands fa-tiktok"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="card-footer">
-                <ul class="nav">
-                    <li>
-                        <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.instagram.com" target="">
-                            <span class="fs-1">
-                                <i class="fa-brands fa-facebook"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.facebook.com" target="">
-                            <span class="fs-1">
-                                <i class="fa-brands fa-instagram"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.twitter.com" target="">
-                            <span class="fs-1">
-                                <i class="fa-brands fa-twitter"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.twitch.com" target="">
-                            <span class="fs-1">
-                                <i class="fa-brands fa-twitch"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.tiktok.com" target="">
-                            <span class="fs-1">
-                                <i class="fa-brands fa-tiktok"></i>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
         </div>
-    </div>
-</footer>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    </footer>
+<!---------------------------------------------------------------------------------------------------------------------->    
     <script src="Assets/js/theme.js" defer></script>
-  </body>
-  </html>
+    <script src="Assets/js/openweathermap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="Assets/js/clock.js"></script>
 </body>
 </html>

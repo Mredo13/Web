@@ -60,6 +60,7 @@
 
 
 .logo{
+    margin-right: 2rem;
     display: flex;
 }
 .logo h1{
@@ -115,6 +116,8 @@
     font-size: 200%;
     cursor: pointer;
     color:yellow;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
 }
 
 .diseño-header{

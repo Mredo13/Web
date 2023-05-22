@@ -6,9 +6,7 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 ];
 
 const interval = setInterval(() => {
-
     const local = new Date();
-    
     let day = local.getDate(),
         month = local.getMonth(),
         year = local.getFullYear();

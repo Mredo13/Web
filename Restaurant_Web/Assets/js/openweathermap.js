@@ -1,4 +1,3 @@
-
 function obtenerCordenadas(){
     if (navigator.geolocation) { 
         position = navigator.geolocation.getCurrentPosition(function(position){
@@ -8,6 +7,7 @@ function obtenerCordenadas(){
         });   
     }
 }
+
 function obtenerNombreRegion(latitud, longitud) {
     var r ="";
     const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitud}&lon=${longitud}&format=jsonv2`;
@@ -27,28 +27,26 @@ function obtenerNombreRegion(latitud, longitud) {
       });
     return "none";
 }
+
 function desplegarDatosClima(region){
     let ciudad_buscada = region;
     let units = 'metric';
     let lang = 'es';
     let apiid = 'c6a7fe5bc4025f2fdfd88dfa3756ce76';
     let urlClima = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad_buscada}&lang=${lang}&units=${units}&appid=${apiid}`;
+
     $.getJSON(urlClima, function (dataClima) {
         let urlPais = `https://restcountries.com/v3.1/alpha/${dataClima.sys.country}`;
         $.getJSON(urlPais, function (dataPais) {
             let html =
-                `<h4 class>${dataClima.name} (${dataPais[0].translations.spa.common}): ${dataClima.weather[0].description}</h4>
-                <h4>Temperatura: ${dataClima.main.temp}°C</h4>
-                <h4>Sensación Térmica: ${dataClima.main.feels_like}°C</h4>
-                <h4>Humedad: ${dataClima.main.humidity}%</h4>
-                <h4>Viento: ${dataClima.wind.speed}m/s</h4>
-                <h4>Coordenadas: ${dataClima.coord.lat},${dataClima.coord.lon}</h4>`;
+                `<p>${dataClima.name} (${dataPais[0].translations.spa.common})<br>
+                Temperatura: ${dataClima.main.temp}°C</p>`;
 
-            $('#info-clima').html(html);
-
+            $('#info-clima-comprimido').html(html);
+            
             let img = `<img src="https://openweathermap.org/img/wn/${dataClima.weather[0].icon}@2x.png" />`;
 
-            $('#img-clima').html(img);
+            $('#img-clima-comprimido').html(img);
         });
     })
     .fail(function () {
