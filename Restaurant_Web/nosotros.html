@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" new-data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +8,8 @@
     <title>Nosotros</title>
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Assets/css/colors.css">
     <link rel="stylesheet" href="Assets/css/estilo-alterno.css">
+    <link rel="stylesheet" href="Assets/css/colors.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -20,8 +20,8 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
-<body class="colors-middle">
-    <nav class="navbar navbar-expand-lg colors-top-bottom navbar-dark diseño-header"> 
+<body class="colors-middle" formato="dark">
+    <nav id="ancla" class="navbar navbar-expand-lg colors-top-bottom navbar-dark diseño-header"> 
         <div class="container">
             <a class="navbar-brand" href="#home.html">
                 <div class="logo">
@@ -57,7 +57,6 @@
                     <li class="nav-item diseño-nav-item">
                         <a class="new-nav-link" href="pruebas.html">Pruebas</a>
                     </li>
-                    
                 </ul>
             </div>
             <div class="container-clock">
@@ -68,6 +67,7 @@
         </div>
         <i class="bi bi-brightness-high-fill" id="modoOscuro"></i>        
     </nav>
+
 <!---------------------------------------------------------------------------------------------------------------------->
     <section class="contenido">
         <div class="texto">
@@ -80,24 +80,24 @@
             <img class="imagen" src="Assets/img/lasana-enrollada.jpg" alt="lasana-enrollada">
         </div>
     </section>
+
 <!---------------------------------------------------------------------------------------------------------------------->
-    <footer class="container-fluid p-5 mt-0 colors-top-bottom">
-    <div class="row ">
-        <div class="col-md-4 text-center mb-3">
+    <footer class="colors-top-bottom diseño-footer row">
+        <div class="col-md-4 text-center">
             <img class="d-inline footer-img" src="assets/img/Logo-final.png" alt="RESTAURANT">
             <br>
             <p class="d-inline color-text-bottom">&copy;2023 - Los Piñuflas. </p>
         </div>
-        <div class="col-md-4 text-center mb-3">
+        <div class="col-md-4 text-center">
             <h4 class="color-text-bottom">Mapa del sitio</h4>
             <hr>
-            <ul class="nav flex-column">
+            <ul class="nav flex-column mt-5">
                 <li class="nav-item">
-                    <a href="home.html" class="nav-link color-text-bottom">Home</a>
+                    <a href="#ancla" class="new-nav-link-bottom color-text-bottom diseño-nav-item"><i class="bi bi-arrow-bar-up"></i></a>
                 </li>                   
             </ul>
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-4">
             <div class="card bg-transparent">
                 <div class="card-header">
                     <h4 class="card-title color-text-bottom">Subscríbete a nuestro newsletter!!!</h4>
@@ -113,35 +113,35 @@
                 <div class="card-footer">
                     <ul class="nav">
                         <li>
-                            <a class="nav-link color-text-bottom" href="http://www.instagram.com" target="">
+                            <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.instagram.com" target="">
                                 <span class="fs-1">
                                     <i class="fa-brands fa-facebook"></i>
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link color-text-bottom" href="http://www.facebook.com" target="">
+                            <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.facebook.com" target="">
                                 <span class="fs-1">
                                     <i class="fa-brands fa-instagram"></i>
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link color-text-bottom" href="http://www.twitter.com" target="">
+                            <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.twitter.com" target="">
                                 <span class="fs-1">
                                     <i class="fa-brands fa-twitter"></i>
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link color-text-bottom" href="http://www.twitch.com" target="">
+                            <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.twitch.com" target="">
                                 <span class="fs-1">
                                     <i class="fa-brands fa-twitch"></i>
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link color-text-bottom" href="http://www.tiktok.com" target="">
+                            <a class="new-nav-link-bottom color-text-bottom diseño-nav-item" href="http://www.tiktok.com" target="">
                                 <span class="fs-1">
                                     <i class="fa-brands fa-tiktok"></i>
                                 </span>
@@ -151,16 +151,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <hr class="text-bg-primary">
-    <div class="row p-2 text-center color-text-bottom">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, voluptatibus.</p>
-    </div>
-  </footer>
+    </footer>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="Assets/js/theme.js" defer></script>
 </body>
 </html>
