@@ -1,33 +1,76 @@
-function validarNombres(tipo){
-    let elemento = document.getElementById(tipo);   
-    if (elemento.value.trim().length == 0){
-        document.getElementById(`error_${tipo}_min`).style.display = "inline";
-        document.getElementById(`error_${tipo}_max`).style.display = "none";
+function validarNombres(tipo) {
+    let elemento = document.getElementById(tipo);
+    let valor = elemento.value.trim();
+
+    let errorMin = document.getElementById(`error_${tipo}_min`);
+    let errorMax = document.getElementById(`error_${tipo}_max`);
+    
+    let letrasRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+
+    if (valor.length === 0) {
+        errorMin.style.display = "inline";
+        errorMax.style.display = "none";
         elemento.classList.add("is-invalid");
-    }
-    else if(elemento.value.trim().length > 15){
-        document.getElementById(`error_${tipo}_max`).style.display = "inline";
-        document.getElementById(`error_${tipo}_min`).style.display = "none";
+    } else if (valor.length > 15) {
+        errorMin.style.display = "none";
+        errorMax.style.display = "inline";
         elemento.classList.add("is-invalid");
-    }
-    else{
-        document.getElementById(`error_${tipo}_min`).style.display = "none";
-        document.getElementById(`error_${tipo}_max`).style.display = "none";
+    } else if (!letrasRegex.test(valor)) {
+        errorMin.style.display = "inline";
+        errorMax.style.display = "none";
+        elemento.classList.add("is-invalid");
+    } else {
+        errorMin.style.display = "none";
+        errorMax.style.display = "none";
         elemento.classList.remove("is-invalid");
         elemento.classList.add("is-valid");
     }
 }
-function validarRut(){
-    let rut = document.getElementById("rut");
-    if (rut.value.trim().length == 0){
-        document.getElementById("error_rut").style.display = "inline";
-        rut.classList.add("is-invalid");
+function validarRut() {
+    let rutInput = document.getElementById("rut");
+    let rut = rutInput.value.trim();
+  
+    if (rut.length === 0) {
+      document.getElementById("error_rut").style.display = "inline";
+      rutInput.classList.add("is-invalid");
+      return false;
     }
-    else{
-        document.getElementById("error_rut").style.display = "none";
-        rut.classList.remove("is-invalid");
-        rut.classList.add("is-valid");
+  
+    rut = rut.replace(/[^\dkK]+/g, '');
+    if (rut.length < 2) {
+      document.getElementById("error_rut").style.display = "inline";
+      rutInput.classList.add("is-invalid");
+      return false;
     }
+  
+    var dv = rut.slice(-1).toUpperCase();
+    var rutNumerico = parseInt(rut.slice(0, -1), 10);
+    if (isNaN(rutNumerico)) {
+      document.getElementById("error_rut").style.display = "inline";
+      rutInput.classList.add("is-invalid");
+      return false;
+    }
+  
+    var suma = 0;
+    var factor = 2;
+    while (rutNumerico > 0) {
+      suma += (rutNumerico % 10) * factor;
+      rutNumerico = Math.floor(rutNumerico / 10);
+      factor = factor === 7 ? 2 : factor + 1;
+    }
+  
+    var dvCalculado = 11 - (suma % 11);
+    dvCalculado = dvCalculado === 11 ? '0' : dvCalculado === 10 ? 'K' : dvCalculado.toString();
+    if (dv !== dvCalculado) {
+      document.getElementById("error_rut").style.display = "inline";
+      rutInput.classList.add("is-invalid");
+      return false;
+    }
+  
+    document.getElementById("error_rut").style.display = "none";
+    rutInput.classList.remove("is-invalid");
+    rutInput.classList.add("is-valid");
+    return true;
 }
 function validarEmail(){
     let email = document.getElementById("email").value;
@@ -63,16 +106,17 @@ function validarDireccion(){
         document.getElementById("direccion").classList.add("is-valid");
     }
 }
-function validarTelefono(){
+function validarTelefono() {
     let telefono = document.getElementById("telefono");
-    if (telefono.value.trim().length == 0){
+    let telefonoValue = telefono.value.trim();
+
+    if (telefonoValue.length !== 9 || isNaN(telefonoValue)) {
         document.getElementById("error_telefono").style.display = "inline";
-        document.getElementById("telefono").classList.add("is-invalid");
-    }
-    else{
+        telefono.classList.add("is-invalid");
+    } else {
         document.getElementById("error_telefono").style.display = "none";
-        document.getElementById("telefono").classList.remove("is-invalid");
-        document.getElementById("telefono").classList.add("is-valid");
+        telefono.classList.remove("is-invalid");
+        telefono.classList.add("is-valid");
     }
 }
 function validarContraseña(){ 
