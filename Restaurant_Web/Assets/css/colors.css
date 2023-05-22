@@ -36,6 +36,19 @@
     --fg: var(--clr-light);/*foreground = primer plano*/
     --bg: var(--crl-dark);
 }
+.colors-top-bottom[formato=dark]{
+    background-color: var(--bg-top-bottom);
+    transition: color 0.7s ease-in-out, background-color 0.2s ease-in-out;
+}
+.colors-middle[formato=dark]{
+    background: linear-gradient(125deg, var(--clr-primary) 25%, var(--clr-accent) 100%);
+    color: var(--text-middle);
+    transition: color 1s ease-in-out;
+}
+.color-text-bottom[formato=dark]{
+    color: var(--text-bottom);
+    transition: color 0.7s ease-in-out, background-color 0.2s ease-in-out;
+}
 
 .diseño-header{
     padding: 0rem 1rem;

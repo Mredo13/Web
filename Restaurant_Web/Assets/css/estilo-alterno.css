@@ -1,10 +1,15 @@
 :root,[new-data-bs-theme="light"]{
+    --bg-middle-1:#fefefe;
+    --bg-middle-2:#fefefe;
+
     --text-top: black;
-    --text-middle: ;
+    --text-middle: black;
     --text-bottom:black;
+
     --fg: var(--clr-light);/*foreground = primer plano*/
     --bg: var(--crl-dark);
 }
+
 
 [new-data-bs-theme="dark"]{
     --clr-light:#CBE4DE;
@@ -15,6 +20,10 @@
     --clr-accent2:pink;
     --noice: rgba(255, 193, 7, 1);
 
+    --bg-top-bottom: var(--crl-dark);
+    --bg-middle-1:#fefefe;
+    --bg-middle-2:#fefefe;
+
     --text-top: white;
     --text-middle: white;
     --text-bottom:rgba(255, 193, 7, 1);
@@ -22,7 +31,7 @@
     --bg: var(--crl-dark);
 }
 .colors-top-bottom{
-    background-color: var(--bg);
+    background-color: var(--bg-top-bottom);
     transition: color 0.7s ease-in-out, background-color 0.2s ease-in-out;
 }
 .colors-middle{

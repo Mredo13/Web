@@ -1,9 +1,6 @@
 const toggle = document.getElementById('modoOscuro');
-var primaryColor = toggle.style.color;
-var secondaryColor = "grey";
-const body = document.querySelector('body');
 const html = document.querySelector('html');
-const titulo = document.getElementById('titulo');
+const format = document.querySelector("body");
 
 
 toggle.addEventListener('click',function(){
@@ -14,6 +11,7 @@ toggle.addEventListener('click',function(){
         
         //body.style.background ='white';
         html.setAttribute("new-data-bs-theme","light")
+        format.setAttribute("formato","light");
         //body.style.color ='black';
         //body.style.transition = '2s';
  
@@ -25,6 +23,7 @@ toggle.addEventListener('click',function(){
         //body.style.background ='black';
         
         html.setAttribute("new-data-bs-theme","dark")
+        format.setAttribute("formato","dark");
         /*body.style.color ='white';
         body.style.transition = '2s';
 
