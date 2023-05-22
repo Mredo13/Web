@@ -31,6 +31,7 @@ function validarRut() {
     let rut = rutInput.value.trim();
   
     if (rut.length === 0) {
+      document.getElementById("error_rut_valido").style.display = "none";
       document.getElementById("error_rut").style.display = "inline";
       rutInput.classList.add("is-invalid");
       return false;
@@ -38,6 +39,7 @@ function validarRut() {
   
     rut = rut.replace(/[^\dkK]+/g, '');
     if (rut.length < 2) {
+      document.getElementById("error_rut").style.display = "none";
       document.getElementById("error_rut_valido").style.display = "inline";
       rutInput.classList.add("is-invalid");
       return false;
