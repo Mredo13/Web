@@ -8,55 +8,22 @@ toggle.addEventListener('click',function(){
     this.classList.toggle('bi-moon');
     this.classList.toggle('bi-brightness-high-fill');
     if(html.getAttribute("new-data-bs-theme")=="dark"){
-        
-        //body.style.background ='white';
         html.setAttribute("new-data-bs-theme","light")
         format.setAttribute("formato","light");
-        //body.style.color ='black';
-        //body.style.transition = '2s';
- 
-        /*var contenedor = primaryColor;
+        /*
+        var contenedor = primaryColor;
         primaryColor= secondaryColor;
         secondaryColor= contenedor;*/
-    }else{
-
-        //body.style.background ='black';
-        
+    }else{       
         html.setAttribute("new-data-bs-theme","dark")
         format.setAttribute("formato","dark");
-        /*body.style.color ='white';
-        body.style.transition = '2s';
-
+        /*
         var contenedor = primaryColor;
         primaryColor= secondaryColor;
         secondaryColor= contenedor;*/
     }  
 })
-/*
-toggle.addEventListener('click',function(){
-    
-    this.classList.toggle('bi-moon');
-    if(this.classList.toggle('bi-brightness-high-fill')){
-        body.style.background ='white';
-        html.setAttribute("new-data-bs-theme","light")
-        body.style.color ='black';
-        body.style.transition = '2s';
- 
-        var contenedor = primaryColor;
-        primaryColor= secondaryColor;
-        secondaryColor= contenedor;
-    }else{
-        body.style.background ='black';
-        
-        html.setAttribute("new-data-bs-theme","dark")
-        body.style.color ='white';
-        body.style.transition = '2s';
 
-        var contenedor = primaryColor;
-        primaryColor= secondaryColor;
-        secondaryColor= contenedor;
-    }  
-})*/
 toggle.onmouseenter = function(e){
     toggle.style.color=secondaryColor;
     this.classList.toggle('bi-moon');
