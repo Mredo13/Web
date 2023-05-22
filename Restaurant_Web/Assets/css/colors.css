@@ -160,3 +160,9 @@
     color: var(--text-middle);
     transition: color 1s ease-in-out;
 }
+.footer-right-part{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-content: center;
+}
